@@ -1,13 +1,13 @@
 ---
 title: "Methodist Church Kwashieman Circuit Calendar 2026"
-client: "The Methodist Church Ghana"
+client: "Maame Araba"
 category: "Calendar"
 description: "A full-year wall calendar combining church leadership photography, a custom wave graphic and a complete national holiday reference."
 cover: "/images/portfolio/methodist-calendar-2026.webp"
 gallery:
   - "/images/portfolio/methodist-calendar-2026.webp"
 year: "2026"
-tools: ["Adobe Photoshop", "Adobe Illustrator"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 8
 published: true
 ---
