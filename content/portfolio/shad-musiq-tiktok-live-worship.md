@@ -7,7 +7,7 @@ cover: "/images/portfolio/shad-musiq-tiktok-live-worship.webp"
 gallery:
   - "/images/portfolio/shad-musiq-tiktok-live-worship.webp"
 year: "2026"
-tools: ["Adobe Photoshop", "Adobe Illustrator"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 1
 published: true
 ---
