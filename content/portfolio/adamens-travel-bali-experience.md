@@ -1,6 +1,6 @@
 ---
 title: "Bali Experience"
-client: "Adamens Travel"
+client: "Maame Araba"
 category: "Travel Flyer"
 description: "A dreamy, aspirational travel flyer built to sell Adamens Travel's Bali package to Ghanaian travelers looking for their next getaway."
 cover: "/images/portfolio/adamens-travel-bali-experience.webp"
