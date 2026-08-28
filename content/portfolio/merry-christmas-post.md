@@ -6,8 +6,8 @@ description: "A festive seasonal greeting design created for social sharing duri
 cover: "/images/portfolio/merry-christmas-post.webp"
 gallery:
   - "/images/portfolio/merry-christmas-post.webp"
-year: "2026"
-tools: ["Adobe Photoshop"]
+year: "2025"
+tools: ["Canva", "Adobe Photoshop"]
 order: 5
 published: true
 ---
