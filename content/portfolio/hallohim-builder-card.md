@@ -8,7 +8,7 @@ gallery:
   - "/images/portfolio/hallohim-builder-card-front.webp"
   - "/images/portfolio/hallohim-builder-card-back.webp"
 year: "2026"
-tools: ["Adobe Illustrator"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 7
 published: true
 ---
