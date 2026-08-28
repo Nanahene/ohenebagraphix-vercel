@@ -7,7 +7,7 @@ cover: "/images/portfolio/clom-menu-design.webp"
 gallery:
   - "/images/portfolio/clom-menu-design.webp"
 year: "2026"
-tools: ["Canva, Adobe Photoshop"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 16
 published: true
 ---
