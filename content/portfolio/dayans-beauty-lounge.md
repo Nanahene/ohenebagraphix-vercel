@@ -7,7 +7,7 @@ cover: "/images/portfolio/dayans-beauty-lounge.webp"
 gallery:
   - "/images/portfolio/dayans-beauty-lounge.webp"
 year: "2026"
-tools: ["Canva, Adobe Photoshop"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 12
 published: true
 ---
