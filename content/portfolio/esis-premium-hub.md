@@ -1,7 +1,7 @@
 ---
 title: "Esi's Premium Hub"
 client: "Esi"
-category: "Brand Flyer"
+category: "Event Flyer"
 description: "A premium event flyer built to position Esi's Premium Hub confidently within its market."
 cover: "/images/portfolio/esis-premium-hub.webp"
 gallery:
