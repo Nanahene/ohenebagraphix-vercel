@@ -68,7 +68,7 @@ export function Footer() {
 
       <div className="border-t" style={{ borderColor: '#3a2f24' }}>
         <p className="mx-auto max-w-7xl px-5 py-6 text-xs sm:px-8" style={{ color: '#9c8d78' }}>
-          © 2026 Ohenebagraphix — Prince Adjei-Addo. All rights reserved.
+          © 2025 Ohenebagraphix — Prince Adjei-Addo. All rights reserved.
         </p>
       </div>
     </footer>
