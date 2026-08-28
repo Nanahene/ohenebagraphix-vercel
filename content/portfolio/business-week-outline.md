@@ -1,13 +1,13 @@
 ---
 title: "Business Week — Outline"
-client: "Business Week"
+client: "Khing Khay"
 category: "Event Flyer"
 description: "A structural outline flyer created for a business week event series."
 cover: "/images/portfolio/business-week-outline.webp"
 gallery:
   - "/images/portfolio/business-week-outline.webp"
 year: "2026"
-tools: ["Adobe Illustrator"]
+tools: ["Canva, Adobe Photoshop"]
 order: 17
 published: true
 ---
