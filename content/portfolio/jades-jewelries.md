@@ -1,13 +1,13 @@
 ---
 title: "Jades Jewelries"
-client: "Jades Jewelries"
+client: "Jades"
 category: "Brand Flyer"
 description: "A luxury-leaning product flyer for a jewelry retailer, pairing dark backgrounds with gold accents to let the products shine."
 cover: "/images/portfolio/jades-jewelries.webp"
 gallery:
   - "/images/portfolio/jades-jewelries.webp"
 year: "2026"
-tools: ["Adobe Photoshop"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 11
 published: true
 ---
