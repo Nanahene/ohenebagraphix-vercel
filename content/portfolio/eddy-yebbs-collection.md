@@ -1,13 +1,13 @@
 ---
 title: "Eddy Yebb's Collection"
-client: "Eddy Yebb"
+client: "Edmund"
 category: "Brand Flyer"
 description: "A full product-grid flyer for a fashion retail brand, organizing shirts, sneakers and accessories into one clean, shoppable layout."
 cover: "/images/portfolio/eddy-yebbs-collection.webp"
 gallery:
   - "/images/portfolio/eddy-yebbs-collection.webp"
 year: "2026"
-tools: ["Adobe Photoshop", "Adobe Illustrator"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 3
 published: true
 ---
