@@ -1,13 +1,13 @@
 ---
 title: "Mensco Drinkables Mockup"
-client: "Mensco Drinkables"
+client: "Maame Araba"
 category: "T-Shirt/Mockup"
 description: "A polished product mockup used to visualize Mensco Drinkables' packaging design ahead of print."
 cover: "/images/portfolio/mensco-drinkables-mockup.webp"
 gallery:
   - "/images/portfolio/mensco-drinkables-mockup.webp"
 year: "2026"
-tools: ["Adobe Photoshop"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 13
 published: true
 ---
