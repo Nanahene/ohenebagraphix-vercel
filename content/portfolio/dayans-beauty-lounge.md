@@ -1,13 +1,13 @@
 ---
 title: "Dayan's Beauty Lounge"
-client: "Dayan's Beauty Lounge"
+client: "Diana"
 category: "Brand Flyer"
 description: "A vibrant beauty-industry flyer showcasing services and styling work in a bold pink brand palette."
 cover: "/images/portfolio/dayans-beauty-lounge.webp"
 gallery:
   - "/images/portfolio/dayans-beauty-lounge.webp"
 year: "2026"
-tools: ["Adobe Photoshop"]
+tools: ["Canva, Adobe Photoshop"]
 order: 12
 published: true
 ---
