@@ -7,7 +7,7 @@ cover: "/images/portfolio/awards-nominee-design.webp"
 gallery:
   - "/images/portfolio/awards-nominee-design.webp"
 year: "2026"
-tools: ["Canva, Adobe Photoshop"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 10
 published: true
 ---
