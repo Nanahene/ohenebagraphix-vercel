@@ -1,13 +1,13 @@
 ---
 title: "Madora Naturals"
-client: "Madora Naturals"
+client: "Miss Dora"
 category: "Label"
 description: "A clean, benefit-led product label for a natural hair-care brand, designed to work on-shelf and on social media."
 cover: "/images/portfolio/madora-naturals-label.webp"
 gallery:
   - "/images/portfolio/madora-naturals-label.webp"
 year: "2026"
-tools: ["Adobe Illustrator"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 14
 published: true
 ---
