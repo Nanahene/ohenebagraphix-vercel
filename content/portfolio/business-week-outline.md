@@ -7,7 +7,7 @@ cover: "/images/portfolio/business-week-outline.webp"
 gallery:
   - "/images/portfolio/business-week-outline.webp"
 year: "2026"
-tools: ["Canva, Adobe Photoshop"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 17
 published: true
 ---
