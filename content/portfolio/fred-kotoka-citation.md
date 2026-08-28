@@ -1,13 +1,13 @@
 ---
 title: "Citation in Honour of Mr. Fred Kotoka"
-client: "Fred Kotoka"
+client: "Mrs. Francisca"
 category: "Citation"
 description: "A warm, celebratory citation design created for a family honouring a mentor's 70th birthday, balancing heartfelt text with elegant gold detailing."
 cover: "/images/portfolio/fred-kotoka-citation.webp"
 gallery:
   - "/images/portfolio/fred-kotoka-citation.webp"
 year: "2026"
-tools: ["Adobe Photoshop"]
+tools: ["Canva", "Adobe Photoshop"]
 order: 4
 published: true
 ---
