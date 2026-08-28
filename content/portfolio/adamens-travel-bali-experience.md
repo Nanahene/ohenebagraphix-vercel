@@ -7,7 +7,7 @@ cover: "/images/portfolio/adamens-travel-bali-experience.webp"
 gallery:
   - "/images/portfolio/adamens-travel-bali-experience.webp"
 year: "2026"
-tools: ["Adobe Photoshop"]
+tools: ["Canva, Adobe Photoshop"]
 order: 2
 published: true
 ---
