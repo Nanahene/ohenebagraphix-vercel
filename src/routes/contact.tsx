@@ -42,6 +42,11 @@ function Contact() {
   ) => setFields((f) => ({ ...f, [e.target.name]: e.target.value }))
 
   const selectedService = priceableServices.find((s) => s.title === fields.service)
+  const priceLine = selectedService
+    ? 'Standard price: ' +
+      selectedService.price +
+      (selectedService.priceNote ? ' — ' + selectedService.priceNote : '')
+    : "We'll scope this together and send a custom quote."
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -159,9 +164,7 @@ function Contact() {
                   ))}
                 </select>
                 <p className="mt-1.5 text-sm font-medium" style={{ color: 'var(--clay-dark)' }}>
-                  {selectedService
-                    ? `Standard price: ${selectedService.price}${selectedService.priceNote ? ` — ${selectedService.priceNote}` : ''}`
-                    : "We'll scope this together and send a custom quote."}
+                  {priceLine}
                 </p>
               </Field>
 
