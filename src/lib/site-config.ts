@@ -15,6 +15,7 @@ export const siteConfig = {
   email: 'adjeiaddoprince@gmail.com',
   phoneDisplay: '+233 (0) 533 021 050',
   whatsappNumber: '233533021050',
+     web3formsAccessKey: '12a71d73-784e-4e34-82eb-a443bf72c2fc',
   stats: [
     { label: 'Projects Delivered', value: '150+' },
     { label: 'Happy Clients', value: '110+' },
