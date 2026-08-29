@@ -108,6 +108,7 @@ function Contact() {
                 day. For a faster response, or to send reference photos/files, message me directly on WhatsApp.
               </p>
               
+              <a
                 href={whatsappLink(`Hi Prince, I just sent a project enquiry (${fields.service}). Following up here.`)}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -216,7 +217,7 @@ function Contact() {
                 <p className="mt-1.5 text-xs" style={{ color: 'var(--ink-soft)' }}>
                   Have photos, logos or documents to share? Upload them to Google Drive/Dropbox and paste the link
                   above, or send them directly on{' '}
-                  
+                  <a
                     href={whatsappLink("Hi Prince, I have some files to share for my project enquiry.")}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -270,6 +271,7 @@ function Contact() {
               </li>
             </ul>
             
+            <a
               href={whatsappLink("Hi Prince, I'd like to start a project with Ohenebagraphix.")}
               target="_blank"
               rel="noopener noreferrer"
