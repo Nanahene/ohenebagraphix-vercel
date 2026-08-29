@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
+import { allServices } from 'content-collections'
 import { CheckCircle2, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { SocialLinks } from '@/components/site/SocialLinks'
@@ -19,41 +20,10 @@ export const Route = createFileRoute('/contact')({
   component: Contact,
 })
 
-const services = [
-  'Flyer Design',
-  'Invitation Design',
-  'Calendar Design',
-  'Brochure Design',
-  'Citation Design',
-  'Label Design',
-  'T-Shirt Design + Mockup',
-  'Business Card Design',
-  'Letterhead Design',
-  'Certificate Design',
-  'Thank You / Birthday Card Design',
-  'ID Card Design',
-  'Logo / Brand Identity',
-  'Full Brand Identity System',
-  'Something else',
-]
-
-function buildEnquiryEmail(fields: Record<string, string>) {
-  const subject = `Project Enquiry — ${fields.service}`
-  const lines = [
-    `Name: ${fields.name}`,
-    `Email or phone: ${fields.contact}`,
-    `Service needed: ${fields.service}`,
-    '',
-    `Project description:`,
-    fields.description,
-    '',
-    fields.deadline ? `Preferred deadline: ${fields.deadline}` : '',
-    fields.budget ? `Budget: ${fields.budget}` : '',
-    fields.reference ? `Reference link: ${fields.reference}` : '',
-  ].filter(Boolean)
-  const body = lines.join('\n')
-  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-}
+// Pulled from content/services/*.md, so a price change there is reflected
+// here automatically. "Something else" is appended for anything not listed.
+const priceableServices = [...allServices].filter((s) => s.published).sort((a, b) => a.order - b.order)
+const services = [...priceableServices.map((s) => s.title), 'Something else']
 
 function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -71,15 +41,32 @@ function Contact() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => setFields((f) => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const selectedService = priceableServices.find((s) => s.title === fields.service)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
     try {
-      // No backend/email service is wired up, so we hand the filled-in
-      // enquiry to the visitor's own email client via a mailto: link.
-      // This works on any static host with zero configuration.
-      window.location.href = buildEnquiryEmail(fields)
-      setStatus('sent')
+      const formData = new FormData()
+      formData.append('access_key', siteConfig.web3formsAccessKey)
+      formData.append('subject', `Project Enquiry — ${fields.service}`)
+      formData.append('from_name', 'Ohenebagraphix Website')
+      formData.append('Name', fields.name)
+      formData.append('Email or phone', fields.contact)
+      formData.append('Service needed', fields.service)
+      formData.append('Standard price', selectedService ? selectedService.price : 'Custom quote')
+      formData.append('Project description', fields.description)
+      if (fields.deadline) formData.append('Preferred deadline', fields.deadline)
+      if (fields.budget) formData.append('Client budget', fields.budget)
+      if (fields.reference) formData.append('Reference link', fields.reference)
+
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      })
+      const result = await res.json()
+      setStatus(result.success ? 'sent' : 'error')
     } catch {
       setStatus('error')
     }
@@ -109,13 +96,13 @@ function Contact() {
             >
               <CheckCircle2 className="h-10 w-10" style={{ color: 'var(--clay)' }} />
               <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
-                Almost there
+                Message sent
               </h2>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-                Your email app should have opened with the enquiry filled in, just hit send. I'll reply with a quote
-                within a day. For a faster response, message me directly on WhatsApp.
+                Thanks for reaching out, your enquiry landed straight in my inbox. I'll reply with a quote within a
+                day. For a faster response, or to send reference photos/files, message me directly on WhatsApp.
               </p>
-              <a
+              
                 href={whatsappLink(`Hi Prince, I just sent a project enquiry (${fields.service}). Following up here.`)}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -171,6 +158,11 @@ function Contact() {
                     </option>
                   ))}
                 </select>
+                <p className="mt-1.5 text-sm font-medium" style={{ color: 'var(--clay-dark)' }}>
+                  {selectedService
+                    ? `Standard price: ${selectedService.price}${selectedService.priceNote ? ` — ${selectedService.priceNote}` : ''}`
+                    : "We'll scope this together and send a custom quote."}
+                </p>
               </Field>
 
               <Field label="Project description" htmlFor="description">
@@ -197,7 +189,7 @@ function Contact() {
                     placeholder="e.g. within a week"
                   />
                 </Field>
-                <Field label="Budget (optional)" htmlFor="budget">
+                <Field label="Your budget (optional)" htmlFor="budget">
                   <input
                     id="budget"
                     name="budget"
@@ -218,6 +210,19 @@ function Contact() {
                   className="field-input"
                   placeholder="Link to inspiration, past design, or Google Drive folder"
                 />
+                <p className="mt-1.5 text-xs" style={{ color: 'var(--ink-soft)' }}>
+                  Have photos, logos or documents to share? Upload them to Google Drive/Dropbox and paste the link
+                  above, or send them directly on{' '}
+                  
+                    href={whatsappLink("Hi Prince, I have some files to share for my project enquiry.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium underline"
+                  >
+                    WhatsApp
+                  </a>
+                  .
+                </p>
               </Field>
 
               <button
@@ -261,7 +266,7 @@ function Contact() {
                 <span>{siteConfig.location}</span>
               </li>
             </ul>
-            <a
+            
               href={whatsappLink("Hi Prince, I'd like to start a project with Ohenebagraphix.")}
               target="_blank"
               rel="noopener noreferrer"
