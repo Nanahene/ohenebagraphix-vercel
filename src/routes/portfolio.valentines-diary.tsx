@@ -70,12 +70,14 @@ function ValentinesDiary() {
       </Reveal>
 
      {/* HERO IMAGE */}
-      <Reveal delay={80} className="mx-auto mt-10 max-w-sm flex justify-center items-center">
-        <img
-          src="/images/portfolio/valentines-diary-02-front-back.webp"
-          alt="Valentine's Diary physical printed cover"
-          className="w-full h-auto rotate-90 scale-125 object-contain"
-        />
+      <Reveal delay={80} className="mx-auto mt-10 max-w-sm overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <div className="relative aspect-[3/4] w-full overflow-hidden flex items-center justify-center">
+          <img
+            src="/images/portfolio/valentines-diary-02-front-back.webp"
+            alt="Valentine's Diary physical printed cover"
+            className="absolute w-[135%] max-w-none rotate-90 object-cover"
+          />
+        </div>
       </Reveal>
 
       {/* OVERVIEW */}
