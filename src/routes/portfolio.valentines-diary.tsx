@@ -33,6 +33,7 @@ const galleryImages = [
 function ValentinesDiary() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
+      {/* BREADCRUMB */}
       <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm" style={{ color: 'var(--ink-soft)' }}>
         <Link to="/" className="hover:underline">
           Home
@@ -52,6 +53,7 @@ function ValentinesDiary() {
         Back to Portfolio
       </Link>
 
+      {/* HEADER */}
       <Reveal className="mt-8 text-center">
         <span
           className="inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
@@ -67,14 +69,16 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* HERO IMAGE: Physical Printed Book Cover & Back on Surface */}
       <Reveal delay={80} className="mt-10 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
         <img
-          src="/images/portfolio/valentines-diary-01-cover.webp"
-          alt="Valentine's Diary cover design"
+          src="/images/portfolio/valentines-diary-07-physical-prints.webp"
+          alt="Valentine's Diary physical printed copies"
           className="w-full object-cover"
         />
       </Reveal>
 
+      {/* OVERVIEW */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Overview
@@ -86,6 +90,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* THE CONCEPT */}
       <Reveal delay={120} className="mx-auto mt-12 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           The Concept
@@ -96,7 +101,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
-      <Reveal delay={100} className="mt-12 grid gap-4 sm:grid-cols-2">
+      <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
             src="/images/portfolio/valentines-diary-02-front-back.webp"
@@ -113,6 +118,7 @@ function ValentinesDiary() {
         </div>
       </Reveal>
 
+      {/* PERSONALIZATION */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Personalization
@@ -140,6 +146,7 @@ function ValentinesDiary() {
         </div>
       </Reveal>
 
+      {/* INSIDE THE DIARY */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Inside the Diary
@@ -170,6 +177,7 @@ function ValentinesDiary() {
         </div>
       </Reveal>
 
+      {/* DESIGN */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Design
@@ -180,7 +188,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
-      <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
+      <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img src="/images/portfolio/valentines-diary-16-page-5.webp" alt="Page 5 design" className="w-full object-cover" />
         </div>
@@ -199,6 +207,7 @@ function ValentinesDiary() {
         <img src="/images/portfolio/valentines-diary-05-open-book-c.webp" alt="3D open book mockup spread" className="w-full object-cover" />
       </Reveal>
 
+      {/* PROJECT OUTCOME */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Project Outcome
@@ -227,6 +236,7 @@ function ValentinesDiary() {
         </div>
       </Reveal>
 
+      {/* FULL GALLERY */}
       <div className="mt-16">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Full Gallery
@@ -245,6 +255,7 @@ function ValentinesDiary() {
         </div>
       </div>
 
+      {/* CALL TO ACTION */}
       <div
         className="mt-16 rounded-2xl border p-8 text-center"
         style={{ borderColor: 'var(--line)', backgroundColor: 'var(--paper-warm)' }}
@@ -264,7 +275,6 @@ function ValentinesDiary() {
             Start a Project
             <ArrowRight className="h-4 w-4" />
           </Link>
-          
           <a
             href={whatsappLink("Hi Prince, I saw the Valentine's Diary project and I'd like something similar.")}
             target="_blank"
