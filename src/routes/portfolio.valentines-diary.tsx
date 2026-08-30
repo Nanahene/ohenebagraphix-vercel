@@ -69,12 +69,12 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
-      {/* HERO IMAGE */}
-      <Reveal delay={80} className="mt-10 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+     {/* HERO IMAGE */}
+      <Reveal delay={80} className="mx-auto mt-10 max-w-lg overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
         <img
           src="/images/portfolio/valentines-diary-02-front-back.webp"
           alt="Valentine's Diary physical printed cover"
-          className="w-full object-cover"
+          className="w-full h-auto object-contain"
         />
       </Reveal>
 
