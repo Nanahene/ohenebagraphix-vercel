@@ -86,13 +86,13 @@ function About() {
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               <img
-                src="/images/brand/award-receiving-certificate.webp"
-                alt="Prince Adjei-Addo receiving his TC Shine Awards certificate"
+                src="/images/brand/award-red-carpet-photo.webp"
+                alt="Prince Adjei-Addo at the TC Shine Awards"
                 className="w-full h-auto rounded-xl"
               />
               <img
-                src="/images/brand/award-red-carpet-photo.webp"
-                alt="Prince Adjei-Addo at the TC Shine Awards"
+                src="/images/brand/award-receiving-certificate.webp"
+                alt="Prince Adjei-Addo receiving his TC Shine Awards certificate"
                 className="w-full h-auto rounded-xl"
               />
             </div>
