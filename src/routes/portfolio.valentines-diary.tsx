@@ -72,7 +72,7 @@ function ValentinesDiary() {
       {/* HERO IMAGE */}
       <Reveal delay={80} className="mt-10 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
         <img
-          src="/images/portfolio/valentines-diary-01-cover.webp"
+          src="/images/portfolio/valentines-diary-02-front-back.webp"
           alt="Valentine's Diary physical printed cover"
           className="w-full object-cover"
         />
@@ -105,14 +105,14 @@ function ValentinesDiary() {
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-02-front-back.webp"
+            valentines-diary-03-open-book-a.webp
             alt="Valentine's Diary Front and Back Cover Spread"
             className="w-full object-cover"
           />
         </div>
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-03-open-book-a.webp"
+            valentines-diary-04-open-book-b.webp
             alt="Valentine's Diary Open Book View A"
             className="w-full object-cover"
           />
