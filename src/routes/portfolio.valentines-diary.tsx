@@ -72,8 +72,8 @@ function ValentinesDiary() {
       {/* HERO IMAGE */}
       <Reveal delay={80} className="mt-10 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
         <img
-          src="/images/portfolio/valentines-diary-01-cover-mockup.webp"
-          alt="Valentine's Diary physical printed copies"
+          src="/images/portfolio/valentines-diary-01-cover.webp"
+          alt="Valentine's Diary physical printed cover"
           className="w-full object-cover"
         />
       </Reveal>
@@ -105,15 +105,15 @@ function ValentinesDiary() {
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-03-open-book-a.webp"
-            alt="Valentine's Diary Inner Pages Layout"
+            src="/images/portfolio/valentines-diary-02-front-back.webp"
+            alt="Valentine's Diary Front and Back Cover Spread"
             className="w-full object-cover"
           />
         </div>
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-02-front-back.webp"
-            alt="Valentine's Diary Cover Spread"
+            src="/images/portfolio/valentines-diary-03-open-book-a.webp"
+            alt="Valentine's Diary Open Book View A"
             className="w-full object-cover"
           />
         </div>
@@ -197,15 +197,15 @@ function ValentinesDiary() {
           <img src="/images/portfolio/valentines-diary-06-about-page.webp" alt="About page back cover" className="w-full object-cover" />
         </div>
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img src="/images/portfolio/valentines-diary-04-open-book-b.webp" alt="Front cover design art" className="w-full object-cover" />
+          <img src="/images/portfolio/valentines-diary-04-open-book-b.webp" alt="Open book spread B" className="w-full object-cover" />
         </div>
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img src="/images/portfolio/valentines-diary-11-dedication-prince.webp" alt="Prince Adjei - Addo dedication page" className="w-full object-cover" />
+          <img src="/images/portfolio/valentines-diary-11-dedication-prince.webp" alt="Prince Adjei Addo dedication page" className="w-full object-cover" />
         </div>
       </Reveal>
 
       <Reveal delay={100} className="mt-4 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-        <img src="/images/portfolio/valentines-diary-05-open-book-c.webp" alt="3D open book mockup spread" className="w-full object-cover" />
+        <img src="/images/portfolio/valentines-diary-05-open-book-c.webp" alt="Open book spread C" className="w-full object-cover" />
       </Reveal>
 
       {/* PROJECT OUTCOME */}
