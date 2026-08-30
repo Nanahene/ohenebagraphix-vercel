@@ -262,6 +262,7 @@ function ValentinesDiary() {
             <ArrowRight className="h-4 w-4" />
           </Link>
           
+          <a
             href={whatsappLink("Hi Prince, I saw the Valentine's Diary project and I'd like something similar.")}
             target="_blank"
             rel="noopener noreferrer"
