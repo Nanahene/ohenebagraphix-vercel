@@ -69,7 +69,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
-     {/* HERO IMAGE */}
+      {/* HERO IMAGE */}
       <Reveal delay={80} className="mx-auto mt-10 max-w-sm overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
         <div className="relative aspect-[3/4] w-full overflow-hidden flex items-center justify-center">
           <img
@@ -103,7 +103,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
-{/* CONCEPT IMAGES */}
+      {/* CONCEPT IMAGES */}
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
@@ -119,8 +119,8 @@ function ValentinesDiary() {
             className="w-full object-cover"
           />
         </div>
-      </Reveal>      
-      
+      </Reveal>
+
       {/* PERSONALIZATION */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
@@ -263,6 +263,9 @@ function ValentinesDiary() {
                 />
               </div>
             )
+          })}
+        </div>
+      </div>
 
       {/* CALL TO ACTION */}
       <div
