@@ -63,10 +63,19 @@ export const siteConfig = {
       "I run Ohenebagraphix from Dansoman, Accra. What started as a curiosity turned into a practice. Two years, over a hundred happy clients, and one belief that hasn't changed: a great design should feel inevitable, like it was always meant to look this way.",
       'Two years designing across print, brand and social. 150+ projects shipped for churches, brands, creators & families.',
     ],
-    highlights: [
-      'Youth Leader of the Year: recognized for community impact at Gradference’24 by TCSHINEAWARDS.',
-      'Based in Dansoman, Accra: working with clients worldwide.',
+        awards: [
+      {
+        title: 'Youth Leader of the Year',
+        description: "Recognized for community impact at Gradference'24 by TCSHINEAWARDS.",
+        image: '/images/brand/award-youth-leader-trophy.webp',
+      },
+      {
+        title: 'Best Graphic Designer - Nominee',
+        description: "Certificate of nomination at Gradference'25 by TCSHINEAWARDS.",
+        image: '/images/brand/award-best-designer-certificate.webp',
+      },
     ],
+    location: 'Based in Dansoman, Accra: working with clients worldwide.',
   },
 } as const
 
