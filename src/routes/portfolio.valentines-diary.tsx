@@ -72,7 +72,7 @@ function ValentinesDiary() {
       {/* HERO IMAGE */}
       <Reveal delay={80} className="mt-10 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
         <img
-          src="/images/portfolio/valentines-diary-07-physical-prints.webp"
+          src="/images/portfolio/valentines-diary-01-cover-mockup.webp"
           alt="Valentine's Diary physical printed copies"
           className="w-full object-cover"
         />
@@ -101,12 +101,12 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
-      {/* CONCEPT IMAGES MATCHING REFERENCE DOC */}
+      {/* CONCEPT IMAGES */}
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
             src="/images/portfolio/valentines-diary-03-open-book-a.webp"
-            alt="Valentine's Diary Open Pages 13 and 14"
+            alt="Valentine's Diary Inner Pages Layout"
             className="w-full object-cover"
           />
         </div>
