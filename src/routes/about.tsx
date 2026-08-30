@@ -52,17 +52,54 @@ function About() {
             ))}
           </div>
 
-          <Reveal delay={160} className="mt-8 space-y-4 border-t pt-6" style={{ borderColor: 'var(--line)' }}>
-            <div className="flex items-start gap-3">
-              <Award className="mt-0.5 h-5 w-5 shrink-0" style={{ color: 'var(--gold)' }} />
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-                {siteConfig.about.highlights[0]}
-              </p>
+                    <Reveal delay={160} className="mt-8 space-y-6 border-t pt-6" style={{ borderColor: 'var(--line)' }}>
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--clay-dark)' }}>
+              Awards &amp; Recognition
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {siteConfig.about.awards.map((award) => (
+                <div
+                  key={award.title}
+                  className="overflow-hidden rounded-2xl border"
+                  style={{ borderColor: 'var(--line)' }}
+                >
+                  {award.image ? (
+                    <img src={award.image} alt={award.title} className="w-full h-auto" />
+                  ) : (
+                    <div
+                      className="flex h-40 w-full items-center justify-center"
+                      style={{ backgroundColor: 'var(--paper-warm)' }}
+                    >
+                      <Award className="h-8 w-8" style={{ color: 'var(--gold)' }} />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>
+                      {award.title}
+                    </p>
+                    <p className="mt-0.5 text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
+                      {award.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="flex items-start gap-3">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <img
+                src="/images/brand/award-receiving-certificate.webp"
+                alt="Prince Adjei-Addo receiving his TC Shine Awards certificate"
+                className="w-full h-auto rounded-xl"
+              />
+              <img
+                src="/images/brand/award-red-carpet-photo.webp"
+                alt="Prince Adjei-Addo at the TC Shine Awards"
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+            <div className="flex items-start gap-3 border-t pt-4" style={{ borderColor: 'var(--line)' }}>
               <MapPin className="mt-0.5 h-5 w-5 shrink-0" style={{ color: 'var(--gold)' }} />
               <p className="text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-                {siteConfig.about.highlights[1]}
+                {siteConfig.about.location}
               </p>
             </div>
           </Reveal>
