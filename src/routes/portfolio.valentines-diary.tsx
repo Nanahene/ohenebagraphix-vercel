@@ -245,18 +245,24 @@ function ValentinesDiary() {
           Full Gallery
         </h2>
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {galleryImages.map((filename) => (
-            <div key={filename} className="overflow-hidden rounded-xl border" style={{ borderColor: 'var(--line)' }}>
-              <img
-                src={'/images/portfolio/' + filename}
-                alt="Valentine's Diary project photo"
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+          {galleryImages.map((filename) => {
+            const isRotated =
+              filename === 'valentines-diary-26-hand-two-envelopes.webp' ||
+              filename === 'valentines-diary-27-hand-envelope-cover.webp'
+
+            return (
+              <div key={filename} className="relative aspect-square overflow-hidden rounded-xl border" style={{ borderColor: 'var(--line)' }}>
+                <img
+                  src={'/images/portfolio/' + filename}
+                  alt="Valentine's Diary project photo"
+                  loading="lazy"
+                  className={
+                    'h-full w-full object-cover ' +
+                    (isRotated ? 'rotate-90 scale-125' : '')
+                  }
+                />
+              </div>
+            )
 
       {/* CALL TO ACTION */}
       <div
