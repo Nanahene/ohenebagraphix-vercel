@@ -17,24 +17,9 @@ export const Route = createFileRoute('/portfolio/valentines-diary')({
   component: ValentinesDiary,
 })
 
+// Gallery contains exclusively blue Adinkra packaging, envelopes, and fanned arrangements
 const galleryImages = [
-  'valentines-diary-02-front-back.webp',
-  'valentines-diary-03-open-book-a.webp',
-  'valentines-diary-04-open-book-b.webp',
-  'valentines-diary-05-open-book-c.webp',
-  'valentines-diary-06-about-page.webp',
-  'valentines-diary-07-about-handheld.webp',
   'valentines-diary-08-about-envelope.webp',
-  'valentines-diary-09-dedication-big-sis.webp',
-  'valentines-diary-10-dedication-abigail.webp',
-  'valentines-diary-11-dedication-prince.webp',
-  'valentines-diary-12-page-32.webp',
-  'valentines-diary-13-page-22.webp',
-  'valentines-diary-14-page-9.webp',
-  'valentines-diary-15-page-4.webp',
-  'valentines-diary-16-page-5.webp',
-  'valentines-diary-17-lifestyle-a.webp',
-  'valentines-diary-18-lifestyle-b.webp',
   'valentines-diary-19-fan-covers.webp',
   'valentines-diary-20-fan-envelopes.webp',
   'valentines-diary-21-scattered-pile.webp',
@@ -68,6 +53,7 @@ function ValentinesDiary() {
         Back to Portfolio
       </Link>
 
+      {/* HERO SECTION */}
       <Reveal className="mt-8 text-center">
         <span
           className="inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
@@ -83,6 +69,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* HERO IMAGE: Front cover portrait holding roses */}
       <Reveal delay={80} className="mt-10 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
         <img
           src="/images/portfolio/valentines-diary-01-cover.webp"
@@ -91,6 +78,7 @@ function ValentinesDiary() {
         />
       </Reveal>
 
+      {/* OVERVIEW */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Overview
@@ -102,6 +90,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* THE CONCEPT */}
       <Reveal delay={120} className="mx-auto mt-12 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           The Concept
@@ -112,23 +101,25 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* CONCEPT IMAGES: Side-by-side cover spread + Open diary spread */}
       <Reveal delay={100} className="mt-12 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-17-lifestyle-a.webp"
-            alt="Valentine's Diary held outdoors"
+            src="/images/portfolio/valentines-diary-02-front-back.webp"
+            alt="Valentine's Diary Cover Spread"
             className="w-full object-cover"
           />
         </div>
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-22-packaging-lollipop.webp"
-            alt="Valentine's Diary packaging detail"
+            src="/images/portfolio/valentines-diary-03-open-book-a.webp"
+            alt="Valentine's Diary Open Pages 13 and 14"
             className="w-full object-cover"
           />
         </div>
       </Reveal>
 
+      {/* PERSONALIZATION */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Personalization
@@ -139,6 +130,7 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* PERSONALIZATION IMAGES: Big Sis, Abigail, Prince */}
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-3">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
@@ -163,6 +155,7 @@ function ValentinesDiary() {
         </div>
       </Reveal>
 
+      {/* INSIDE THE DIARY */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Inside the Diary
@@ -178,14 +171,23 @@ function ValentinesDiary() {
         </blockquote>
       </Reveal>
 
-      <Reveal delay={100} className="mt-8 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-        <img
-          src="/images/portfolio/valentines-diary-06-about-page.webp"
-          alt="Blank diary page for writing"
-          className="w-full object-cover"
-        />
+      {/* INSIDE THE DIARY IMAGES: Pages 32, 22, 9, 4 */}
+      <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <img src="/images/portfolio/valentines-diary-12-page-32.webp" alt="Page 32 mockup" className="w-full object-cover" />
+        </div>
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <img src="/images/portfolio/valentines-diary-13-page-22.webp" alt="Page 22 mockup" className="w-full object-cover" />
+        </div>
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <img src="/images/portfolio/valentines-diary-14-page-9.webp" alt="Page 9 mockup" className="w-full object-cover" />
+        </div>
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <img src="/images/portfolio/valentines-diary-15-page-4.webp" alt="Page 4 mockup" className="w-full object-cover" />
+        </div>
       </Reveal>
 
+      {/* DESIGN */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Design
@@ -196,6 +198,20 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* DESIGN IMAGES: Page 5, About page, Art layout, 3D open book */}
+      <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <img src="/images/portfolio/valentines-diary-16-page-5.webp" alt="Page 5 design" className="w-full object-cover" />
+        </div>
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <img src="/images/portfolio/valentines-diary-06-about-page.webp" alt="About page back cover" className="w-full object-cover" />
+        </div>
+      </Reveal>
+      <Reveal delay={100} className="mt-4 overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <img src="/images/portfolio/valentines-diary-05-open-book-c.webp" alt="3D open book mockup spread" className="w-full object-cover" />
+      </Reveal>
+
+      {/* PROJECT OUTCOME */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Project Outcome
@@ -207,23 +223,25 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
+      {/* PROJECT OUTCOME IMAGES: Physical handheld photos */}
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-19-fan-covers.webp"
-            alt="Printed copies of Valentine's Diary"
+            src="/images/portfolio/valentines-diary-17-lifestyle-a.webp"
+            alt="Physical diary held outdoors"
             className="w-full object-cover"
           />
         </div>
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            src="/images/portfolio/valentines-diary-20-fan-envelopes.webp"
-            alt="Printed copies with envelopes"
+            src="/images/portfolio/valentines-diary-18-lifestyle-b.webp"
+            alt="Holding Valentine's Diary"
             className="w-full object-cover"
           />
         </div>
       </Reveal>
 
+      {/* FULL GALLERY (PACKAGING & ENVELOPES ONLY) */}
       <div className="mt-16">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Full Gallery
@@ -242,6 +260,7 @@ function ValentinesDiary() {
         </div>
       </div>
 
+      {/* FOOTER CTA */}
       <div
         className="mt-16 rounded-2xl border p-8 text-center"
         style={{ borderColor: 'var(--line)', backgroundColor: 'var(--paper-warm)' }}
