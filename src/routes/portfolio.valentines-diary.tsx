@@ -101,24 +101,24 @@ function ValentinesDiary() {
         </p>
       </Reveal>
 
-      {/* CONCEPT IMAGES */}
+{/* CONCEPT IMAGES */}
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            valentines-diary-03-open-book-a.webp
-            alt="Valentine's Diary Front and Back Cover Spread"
+            src="/images/portfolio/valentines-diary-03-open-book-a.webp"
+            alt="Valentine's Diary Open Book Spread A"
             className="w-full object-cover"
           />
         </div>
         <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
-            valentines-diary-04-open-book-b.webp
-            alt="Valentine's Diary Open Book View A"
+            src="/images/portfolio/valentines-diary-04-open-book-b.webp"
+            alt="Valentine's Diary Open Book Spread B"
             className="w-full object-cover"
           />
         </div>
-      </Reveal>
-
+      </Reveal>      
+      
       {/* PERSONALIZATION */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
