@@ -192,40 +192,40 @@ function ValentinesDiary() {
       </Reveal>
 
       <Reveal delay={100} className="mt-8 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="relative aspect-square overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
             src="/images/portfolio/valentines-diary-01-cover.webp"
             alt="Valentine's Diary cover design"
-            className="h-full w-full object-cover"
+            className="w-full object-cover"
           />
         </div>
-        <div className="relative aspect-square overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
             src="/images/portfolio/valentines-diary-06-about-page.webp"
             alt="About page back cover"
-            className="h-full w-full object-cover"
+            className="w-full object-cover"
           />
         </div>
-        <div className="relative aspect-square overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
           <img
             src="/images/portfolio/valentines-diary-05-open-book-c.webp"
             alt="Prince Adjei-Addo dedication page"
-            className="h-full w-full object-cover"
+            className="w-full object-cover"
           />
         </div>
         <div className="grid grid-rows-2 gap-4">
-          <div className="relative aspect-square overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
             <img
               src="/images/portfolio/valentines-diary-11-dedication-prince.webp"
               alt="Prince Adjei Addo dedication page mockup"
-              className="h-full w-full object-cover"
+              className="w-full object-cover"
             />
           </div>
-          <div className="relative aspect-square overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
             <img
               src="/images/portfolio/valentines-diary-04-open-book-b.webp"
               alt="Open book spread B"
-              className="h-full w-full object-cover"
+              className="w-full object-cover"
             />
           </div>
         </div>
