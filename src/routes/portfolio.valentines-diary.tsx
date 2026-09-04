@@ -77,12 +77,12 @@ function ValentinesDiary() {
         <button
           type="button"
           onClick={() => setLightbox('/images/portfolio/valentines-diary-02-front-back.webp')}
-          className="relative aspect-[3/4] w-full overflow-hidden flex items-center justify-center focus-visible:outline focus-visible:outline-2"
+          className="block w-full focus-visible:outline focus-visible:outline-2"
         >
           <img
             src="/images/portfolio/valentines-diary-02-front-back.webp"
             alt="Valentine's Diary physical printed cover"
-            className="absolute w-[135%] max-w-none rotate-90 object-cover"
+            className="w-full h-auto object-cover"
           />
         </button>
       </Reveal>
@@ -316,31 +316,22 @@ function ValentinesDiary() {
           Full Gallery
         </h2>
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {galleryImages.map((filename) => {
-            const isRotated =
-              filename === 'valentines-diary-26-hand-two-envelopes.webp' ||
-              filename === 'valentines-diary-27-hand-envelope-cover.webp'
-
-            return (
-              <button
-                key={filename}
-                type="button"
-                onClick={() => setLightbox('/images/portfolio/' + filename)}
-                className="relative aspect-square overflow-hidden rounded-xl border focus-visible:outline focus-visible:outline-2"
-                style={{ borderColor: 'var(--line)' }}
-              >
-                <img
-                  src={'/images/portfolio/' + filename}
-                  alt="Valentine's Diary project photo"
-                  loading="lazy"
-                  className={
-                    'h-full w-full object-cover ' +
-                    (isRotated ? 'rotate-90 scale-125' : '')
-                  }
-                />
-              </button>
-            )
-          })}
+          {galleryImages.map((filename) => (
+            <button
+              key={filename}
+              type="button"
+              onClick={() => setLightbox('/images/portfolio/' + filename)}
+              className="relative aspect-square overflow-hidden rounded-xl border focus-visible:outline focus-visible:outline-2"
+              style={{ borderColor: 'var(--line)' }}
+            >
+              <img
+                src={'/images/portfolio/' + filename}
+                alt="Valentine's Diary project photo"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </button>
+          ))}
         </div>
       </div>
 
@@ -403,4 +394,4 @@ function ValentinesDiary() {
       </div>
     </div>
   )
-        }
+  }
