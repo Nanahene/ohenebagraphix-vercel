@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowLeft, ArrowRight, X } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { whatsappLink } from '@/lib/site-config'
 
@@ -31,6 +32,8 @@ const galleryImages = [
 ]
 
 function ValentinesDiary() {
+  const [lightbox, setLightbox] = useState<string | null>(null)
+
   return (
     <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8">
       {/* BREADCRUMB */}
@@ -71,13 +74,17 @@ function ValentinesDiary() {
 
       {/* HERO IMAGE */}
       <Reveal delay={80} className="mx-auto mt-10 max-w-sm overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-        <div className="relative aspect-[3/4] w-full overflow-hidden flex items-center justify-center">
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-02-front-back.webp')}
+          className="relative aspect-[3/4] w-full overflow-hidden flex items-center justify-center focus-visible:outline focus-visible:outline-2"
+        >
           <img
             src="/images/portfolio/valentines-diary-02-front-back.webp"
             alt="Valentine's Diary physical printed cover"
             className="absolute w-[135%] max-w-none rotate-90 object-cover"
           />
-        </div>
+        </button>
       </Reveal>
 
       {/* OVERVIEW */}
@@ -105,20 +112,30 @@ function ValentinesDiary() {
 
       {/* CONCEPT IMAGES */}
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-03-open-book-a.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
           <img
             src="/images/portfolio/valentines-diary-03-open-book-a.webp"
             alt="Valentine's Diary Open Book Spread A"
             className="w-full object-cover"
           />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        </button>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-04-open-book-b.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
           <img
             src="/images/portfolio/valentines-diary-04-open-book-b.webp"
             alt="Valentine's Diary Open Book Spread B"
             className="w-full object-cover"
           />
-        </div>
+        </button>
       </Reveal>
 
       {/* PERSONALIZATION */}
@@ -133,20 +150,30 @@ function ValentinesDiary() {
       </Reveal>
 
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-09-dedication-big-sis.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
           <img
             src="/images/portfolio/valentines-diary-09-dedication-big-sis.webp"
             alt="Personalized dedication page - Big Sis"
             className="w-full object-cover"
           />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        </button>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-10-dedication-abigail.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
           <img
             src="/images/portfolio/valentines-diary-10-dedication-abigail.webp"
             alt="Personalized dedication page - Abigail"
             className="w-full object-cover"
           />
-        </div>
+        </button>
       </Reveal>
 
       {/* INSIDE THE DIARY */}
@@ -166,18 +193,22 @@ function ValentinesDiary() {
       </Reveal>
 
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img src="/images/portfolio/valentines-diary-12-page-32.webp" alt="Page 32 mockup" className="w-full object-cover" />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img src="/images/portfolio/valentines-diary-13-page-22.webp" alt="Page 22 mockup" className="w-full object-cover" />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img src="/images/portfolio/valentines-diary-14-page-9.webp" alt="Page 9 mockup" className="w-full object-cover" />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img src="/images/portfolio/valentines-diary-15-page-4.webp" alt="Page 4 mockup" className="w-full object-cover" />
-        </div>
+        {[
+          { src: 'valentines-diary-12-page-32.webp', alt: 'Page 32 mockup' },
+          { src: 'valentines-diary-13-page-22.webp', alt: 'Page 22 mockup' },
+          { src: 'valentines-diary-14-page-9.webp', alt: 'Page 9 mockup' },
+          { src: 'valentines-diary-15-page-4.webp', alt: 'Page 4 mockup' },
+        ].map((item) => (
+          <button
+            key={item.src}
+            type="button"
+            onClick={() => setLightbox('/images/portfolio/' + item.src)}
+            className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+            style={{ borderColor: 'var(--line)' }}
+          >
+            <img src={'/images/portfolio/' + item.src} alt={item.alt} className="w-full object-cover" />
+          </button>
+        ))}
       </Reveal>
 
       {/* DESIGN */}
@@ -192,42 +223,51 @@ function ValentinesDiary() {
       </Reveal>
 
       <Reveal delay={100} className="mt-8 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img
-            src="/images/portfolio/valentines-diary-01-cover.webp"
-            alt="Valentine's Diary cover design"
-            className="w-full object-cover"
-          />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img
-            src="/images/portfolio/valentines-diary-06-about-page.webp"
-            alt="About page back cover"
-            className="w-full object-cover"
-          />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-          <img
-            src="/images/portfolio/valentines-diary-05-open-book-c.webp"
-            alt="Prince Adjei-Addo dedication page"
-            className="w-full object-cover"
-          />
-        </div>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-01-cover.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
+          <img src="/images/portfolio/valentines-diary-01-cover.webp" alt="Valentine's Diary cover design" className="w-full object-cover" />
+        </button>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-06-about-page.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
+          <img src="/images/portfolio/valentines-diary-06-about-page.webp" alt="About page back cover" className="w-full object-cover" />
+        </button>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-05-open-book-c.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
+          <img src="/images/portfolio/valentines-diary-05-open-book-c.webp" alt="Prince Adjei-Addo dedication page" className="w-full object-cover" />
+        </button>
         <div className="grid grid-rows-2 gap-4">
-          <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <button
+            type="button"
+            onClick={() => setLightbox('/images/portfolio/valentines-diary-11-dedication-prince.webp')}
+            className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+            style={{ borderColor: 'var(--line)' }}
+          >
             <img
               src="/images/portfolio/valentines-diary-11-dedication-prince.webp"
               alt="Prince Adjei Addo dedication page mockup"
               className="w-full object-cover"
             />
-          </div>
-          <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
-            <img
-              src="/images/portfolio/valentines-diary-04-open-book-b.webp"
-              alt="Open book spread B"
-              className="w-full object-cover"
-            />
-          </div>
+          </button>
+          <button
+            type="button"
+            onClick={() => setLightbox('/images/portfolio/valentines-diary-04-open-book-b.webp')}
+            className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+            style={{ borderColor: 'var(--line)' }}
+          >
+            <img src="/images/portfolio/valentines-diary-04-open-book-b.webp" alt="Open book spread B" className="w-full object-cover" />
+          </button>
         </div>
       </Reveal>
 
@@ -244,20 +284,30 @@ function ValentinesDiary() {
       </Reveal>
 
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-17-lifestyle-a.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
           <img
             src="/images/portfolio/valentines-diary-17-lifestyle-a.webp"
             alt="Physical diary held outdoors"
             className="w-full object-cover"
           />
-        </div>
-        <div className="overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+        </button>
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/valentines-diary-18-lifestyle-b.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
           <img
             src="/images/portfolio/valentines-diary-18-lifestyle-b.webp"
             alt="Holding Valentine's Diary"
             className="w-full object-cover"
           />
-        </div>
+        </button>
       </Reveal>
 
       {/* FULL GALLERY */}
@@ -272,7 +322,13 @@ function ValentinesDiary() {
               filename === 'valentines-diary-27-hand-envelope-cover.webp'
 
             return (
-              <div key={filename} className="relative aspect-square overflow-hidden rounded-xl border" style={{ borderColor: 'var(--line)' }}>
+              <button
+                key={filename}
+                type="button"
+                onClick={() => setLightbox('/images/portfolio/' + filename)}
+                className="relative aspect-square overflow-hidden rounded-xl border focus-visible:outline focus-visible:outline-2"
+                style={{ borderColor: 'var(--line)' }}
+              >
                 <img
                   src={'/images/portfolio/' + filename}
                   alt="Valentine's Diary project photo"
@@ -282,11 +338,37 @@ function ValentinesDiary() {
                     (isRotated ? 'rotate-90 scale-125' : '')
                   }
                 />
-              </div>
+              </button>
             )
           })}
         </div>
       </div>
+
+      {/* LIGHTBOX */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Large view of Valentine's Diary photo"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white focus-visible:outline focus-visible:outline-2"
+            aria-label="Close large view"
+            onClick={() => setLightbox(null)}
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={lightbox}
+            alt="Valentine's Diary large view"
+            className="max-h-full max-w-full rounded-lg object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       {/* CALL TO ACTION */}
       <div
@@ -321,4 +403,4 @@ function ValentinesDiary() {
       </div>
     </div>
   )
-}
+        }
