@@ -10,7 +10,7 @@ export const siteConfig = {
     "I'm Prince Adjei-Addo, founder of Ohenebagraphix. For two years I've been designing flyers, citations, brand identity and print collateral that Ghanaian brands and creators actually want to share.",
   description:
     'Ohenebagraphix is a one-person design studio in Accra, Ghana, crafting flyers, brand identity and print collateral for clients across Ghana and around the world.',
-  url: 'https://ohenebagraphix.vercel.app',
+  url: 'https://ohenebagraphix',
   location: 'Dansoman, Accra, Ghana',
   email: 'adjeiaddoprince@gmail.com',
   phoneDisplay: '+233 (0) 533 021 050',
