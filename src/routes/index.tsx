@@ -9,7 +9,7 @@ import { imgUrl } from '@/lib/image'
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
-      { title: `${siteConfig.name} — Design that moves people, crafted not templated` },
+      { title: siteConfig.name },
       {
         name: 'description',
         content:
