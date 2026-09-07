@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
-import { allPortfolios } from 'content-collections'
+import { allPortfolios, allTestimonials } from 'content-collections'
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Quote, X } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { PortfolioCard } from '@/components/site/PortfolioCard'
 import { imgUrl } from '@/lib/image'
@@ -19,8 +19,11 @@ export const Route = createFileRoute('/portfolio/$slug')({
     const related = published
       .filter((p) => p._meta.path !== project._meta.path && p.category === project.category)
       .slice(0, 3)
+    const reviews = [...allTestimonials]
+      .filter((t) => t.published && t.project === project._meta.path)
+      .sort((a, b) => a.order - b.order)
 
-    return { project, previous, next, related }
+    return { project, previous, next, related, reviews }
   },
   head: ({ loaderData }) => ({
     meta: loaderData
@@ -37,7 +40,7 @@ export const Route = createFileRoute('/portfolio/$slug')({
 })
 
 function ProjectDetail() {
-  const { project, previous, next, related } = Route.useLoaderData()
+  const { project, previous, next, related, reviews } = Route.useLoaderData()
   const [lightbox, setLightbox] = useState<string | null>(null)
   const gallery = project.gallery.length > 0 ? project.gallery : [project.cover]
 
@@ -176,6 +179,30 @@ function ProjectDetail() {
         </div>
       )}
 
+      {reviews.length > 0 && (
+        <div className="mt-14">
+          <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
+            Client Review
+          </h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {reviews.map((r) => (
+              <figure key={r._meta.path} className="h-full rounded-2xl border p-7" style={{ borderColor: 'var(--line)' }}>
+                <Quote className="h-7 w-7" style={{ color: 'var(--gold)' }} aria-hidden="true" />
+                <blockquote className="mt-4 text-lg leading-relaxed" style={{ color: 'var(--ink)' }}>
+                  "{r.quote}"
+                </blockquote>
+                <figcaption className="mt-5 text-sm">
+                  <span className="font-semibold" style={{ color: 'var(--ink)' }}>
+                    {r.name}
+                  </span>
+                  <span style={{ color: 'var(--ink-soft)' }}> — {r.role}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="mt-14 flex items-center justify-between gap-4 border-y py-5" style={{ borderColor: 'var(--line)' }}>
         <Link
           to="/portfolio/$slug"
@@ -243,4 +270,4 @@ function ProjectDetail() {
       </div>
     </div>
   )
-}
+      }
