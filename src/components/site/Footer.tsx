@@ -7,6 +7,8 @@ const quickLinks = [
   { to: '/portfolio', label: 'Work' },
   { to: '/services', label: 'Services' },
   { to: '/pricing', label: 'Pricing' },
+  { to: '/about', label: 'About' },
+  { to: '/testimonials', label: 'Testimonials' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -67,10 +69,15 @@ export function Footer() {
       </div>
 
       <div className="border-t" style={{ borderColor: '#3a2f24' }}>
-        <p className="mx-auto max-w-7xl px-5 py-6 text-xs sm:px-8" style={{ color: '#9c8d78' }}>
-          © 2025-2026 Ohenebagraphix — Prince Adjei-Addo. All rights reserved.
-        </p>
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-6 sm:px-8">
+          <p className="text-xs" style={{ color: '#9c8d78' }}>
+            © 2026 Ohenebagraphix — Prince Adjei-Addo. All rights reserved.
+          </p>
+          <Link to="/privacy" className="text-xs hover:underline" style={{ color: '#9c8d78' }}>
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   )
-}
+              }
