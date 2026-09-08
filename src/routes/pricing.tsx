@@ -69,6 +69,39 @@ function Pricing() {
         </table>
       </Reveal>
 
+      <Reveal delay={90} className="mt-8 rounded-2xl border p-6" style={{ borderColor: 'var(--line)' }}>
+        <h2 className="font-display text-lg font-semibold" style={{ color: 'var(--ink)' }}>
+          Payment Methods
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
+          For clients in Ghana and abroad, payment can be made by Mobile Money or bank transfer.
+        </p>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--clay-dark)' }}>
+              Mobile Money
+            </p>
+            <p className="mt-2 text-sm" style={{ color: 'var(--ink-soft)' }}>
+              Number: {siteConfig.payment.momo.number}
+              <br />
+              Name: {siteConfig.payment.momo.name}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--clay-dark)' }}>
+              Bank Transfer
+            </p>
+            <p className="mt-2 text-sm" style={{ color: 'var(--ink-soft)' }}>
+              Bank: {siteConfig.payment.bank.bankName}
+              <br />
+              Account Name: {siteConfig.payment.bank.accountName}
+              <br />
+              Account Number: {siteConfig.payment.bank.accountNumber}
+            </p>
+          </div>
+        </div>
+      </Reveal>
+
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
         <Reveal className="rounded-2xl border p-6" style={{ borderColor: 'var(--line)' }}>
           <h2 className="font-display text-lg font-semibold" style={{ color: 'var(--ink)' }}>
