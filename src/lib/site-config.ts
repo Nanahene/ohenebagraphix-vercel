@@ -57,6 +57,35 @@ export const siteConfig = {
     { title: 'Express Delivery', price: 'GH₵30' },
     { title: 'Extra Revision After 72 Hours', price: 'GH₵20' },
   ],
+  payment: {
+    momo: {
+      number: '0533 021 050',
+      name: 'Abigail Ababio',
+    },
+    bank: {
+      bankName: 'Ecobank',
+      accountName: 'Prince Adjei - Addo',
+      accountNumber: '1441005229599',
+    },
+  },
+  howItWorks: [
+    {
+      title: 'Send your brief',
+      description: 'Tell me what you need via the contact form or WhatsApp, photos or reference links welcome.',
+    },
+    {
+      title: 'Get a quote',
+      description: "I'll reply with pricing and scope, usually within a day.",
+    },
+    {
+      title: 'Design & revise',
+      description: 'Work begins after the deposit. Standard delivery is 72 hours, with reasonable revisions included.',
+    },
+    {
+      title: 'Receive final files',
+      description: 'Print- and social-ready files delivered once the balance is settled.',
+    },
+  ],
   about: {
     intro: "Hi, I'm Prince.",
     paragraphs: [
