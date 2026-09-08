@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { allPortfolios } from 'content-collections'
-import { ArrowRight } from 'lucide-react'
+import { allPortfolios, allTestimonials } from 'content-collections'
+import { ArrowRight, Quote } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { PortfolioCard } from '@/components/site/PortfolioCard'
 import { siteConfig, whatsappLink } from '@/lib/site-config'
@@ -9,7 +9,7 @@ import { imgUrl } from '@/lib/image'
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
-      { title: siteConfig.name },
+      { title: `${siteConfig.name} — Design that moves people, crafted not templated` },
       {
         name: 'description',
         content:
@@ -25,6 +25,10 @@ function Home() {
     .filter((p) => p.published)
     .sort((a, b) => a.order - b.order)
     .slice(0, 6)
+  const featuredTestimonials = [...allTestimonials]
+    .filter((t) => t.published)
+    .sort((a, b) => a.order - b.order)
+    .slice(0, 3)
 
   return (
     <div>
@@ -141,6 +145,35 @@ function Home() {
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+        <Reveal>
+          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--clay-dark)' }}>
+            How it works
+          </p>
+          <h2 className="font-display mt-3 max-w-xl text-3xl font-semibold sm:text-4xl" style={{ color: 'var(--ink)' }}>
+            From brief to final files, in four steps.
+          </h2>
+        </Reveal>
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {siteConfig.howItWorks.map((step, i) => (
+            <Reveal key={step.title} delay={i * 80}>
+              <div className="h-full rounded-2xl border p-6" style={{ borderColor: 'var(--line)' }}>
+                <span className="font-display text-2xl font-semibold" style={{ color: 'var(--gold)' }}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="font-display mt-4 text-lg font-semibold" style={{ color: 'var(--ink)' }}>
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
+                  {step.description}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* Portfolio preview */}
       <section className="border-y" style={{ borderColor: 'var(--line)', backgroundColor: 'var(--paper-warm)' }}>
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
@@ -172,6 +205,51 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* What clients say */}
+      {featuredTestimonials.length > 0 && (
+        <section className="border-y" style={{ borderColor: 'var(--line)', backgroundColor: 'var(--paper-warm)' }}>
+          <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+            <Reveal className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--clay-dark)' }}>
+                  What clients say
+                </p>
+                <h2 className="font-display mt-3 text-3xl font-semibold sm:text-4xl" style={{ color: 'var(--ink)' }}>
+                  Trusted by artists, brands and families
+                </h2>
+              </div>
+              <Link
+                to="/testimonials"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold underline-offset-4 hover:underline"
+                style={{ color: 'var(--clay-dark)' }}
+              >
+                Read all testimonials
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
+
+            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+              {featuredTestimonials.map((t, i) => (
+                <Reveal key={t._meta.path} delay={i * 90}>
+                  <figure className="h-full rounded-2xl border p-7" style={{ borderColor: 'var(--line)', backgroundColor: 'var(--paper)' }}>
+                    <Quote className="h-6 w-6" style={{ color: 'var(--gold)' }} aria-hidden="true" />
+                    <blockquote className="mt-4 text-base leading-relaxed" style={{ color: 'var(--ink)' }}>
+                      "{t.quote}"
+                    </blockquote>
+                    <figcaption className="mt-5 text-sm">
+                      <span className="font-semibold" style={{ color: 'var(--ink)' }}>
+                        {t.name}
+                      </span>
+                      <span style={{ color: 'var(--ink-soft)' }}> — {t.role}</span>
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA band */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
@@ -209,4 +287,4 @@ function Home() {
       </section>
     </div>
   )
-}
+      }
