@@ -71,7 +71,7 @@ export function Footer() {
       <div className="border-t" style={{ borderColor: '#3a2f24' }}>
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-6 sm:px-8">
           <p className="text-xs" style={{ color: '#9c8d78' }}>
-            © 2026 Ohenebagraphix — Prince Adjei-Addo. All rights reserved.
+            © 2025-2026 Ohenebagraphix — Prince Adjei-Addo. All rights reserved.
           </p>
           <Link to="/privacy" className="text-xs hover:underline" style={{ color: '#9c8d78' }}>
             Privacy Policy
