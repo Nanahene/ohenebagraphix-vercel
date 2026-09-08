@@ -1,4 +1,5 @@
 import { HeadContent, Link, Scripts, createRootRoute } from '@tanstack/react-router'
+import { Analytics } from '@vercel/analytics/react'
 import { Header } from '@/components/site/Header'
 import { Footer } from '@/components/site/Footer'
 import { WhatsAppFloat } from '@/components/site/WhatsAppFloat'
@@ -95,6 +96,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <Footer />
         </div>
         <WhatsAppFloat />
+        <Analytics />
         <Scripts />
       </body>
     </html>
