@@ -22,8 +22,8 @@ export const siteConfig = {
     { label: 'Years of Craft', value: '2+' },
   ],
   social: {
-    instagram: 'https://instagram.com/ohenebayaw20',
-    tiktok: 'https://tiktok.com/@ohenebayaw20',
+    instagram: 'https://instagram.com/ohenebagraphix',
+    tiktok: 'https://tiktok.com/@ohenebagraphix',
     facebook: 'https://facebook.com/ohenebayaw20',
     pinterest: 'https://pinterest.com/ohenebagraphix',
   },
