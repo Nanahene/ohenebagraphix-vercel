@@ -20,7 +20,7 @@ export function HeroCarousel({
   }, [images.length, intervalMs])
 
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-2xl">
+    <div className="relative aspect-[2/3] w-full overflow-hidden rounded-[1.75rem] shadow-2xl">
       {images.map((src, i) => (
         <img
           key={src}
@@ -29,8 +29,8 @@ export function HeroCarousel({
           aria-hidden={i === 0 ? undefined : true}
           className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
           style={{ opacity: i === index ? 1 : 0 }}
-          width={720}
-          height={900}
+          width={800}
+          height={1200}
           fetchPriority={i === 0 ? 'high' : undefined}
         />
       ))}
