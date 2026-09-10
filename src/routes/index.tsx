@@ -3,8 +3,8 @@ import { allPortfolios, allTestimonials } from 'content-collections'
 import { ArrowRight, Quote } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { PortfolioCard } from '@/components/site/PortfolioCard'
+import { HeroCarousel } from '@/components/site/HeroCarousel'
 import { siteConfig, whatsappLink } from '@/lib/site-config'
-import { imgUrl } from '@/lib/image'
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -90,13 +90,9 @@ function Home() {
               style={{ background: 'linear-gradient(135deg, var(--gold-soft), var(--clay))', opacity: 0.35 }}
               aria-hidden="true"
             />
-            <img
-              src={imgUrl('/images/brand/prince-adjei-addo.webp', { w: 720, q: 85 })}
-              alt="Prince Adjei-Addo, founder and designer of Ohenebagraphix, in professional attire"
-              className="w-full rounded-[1.75rem] object-cover shadow-2xl"
-              width={720}
-              height={900}
-              fetchPriority="high"
+            <HeroCarousel
+              images={siteConfig.heroImages}
+              alt="Prince Adjei-Addo, founder and designer of Ohenebagraphix"
             />
             <div
               className="absolute -bottom-5 left-5 right-5 rounded-2xl border bg-[var(--paper)] px-5 py-4 shadow-lg sm:left-8 sm:right-auto sm:min-w-[220px]"
