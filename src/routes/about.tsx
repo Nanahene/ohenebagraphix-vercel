@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { Award, MapPin } from 'lucide-react'
+import { useState } from 'react'
+import { Award, MapPin, X } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { imgUrl } from '@/lib/image'
 import { siteConfig } from '@/lib/site-config'
@@ -19,6 +20,8 @@ export const Route = createFileRoute('/about')({
 })
 
 function About() {
+  const [lightbox, setLightbox] = useState<string | null>(null)
+
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -52,7 +55,7 @@ function About() {
             ))}
           </div>
 
-                    <Reveal delay={160} className="mt-8 space-y-6 border-t pt-6" style={{ borderColor: 'var(--line)' }}>
+          <Reveal delay={160} className="mt-8 space-y-6 border-t pt-6" style={{ borderColor: 'var(--line)' }}>
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--clay-dark)' }}>
               Awards &amp; Recognition
             </p>
@@ -64,7 +67,14 @@ function About() {
                   style={{ borderColor: 'var(--line)' }}
                 >
                   {award.image ? (
-                    <img src={award.image} alt={award.title} className="w-full h-auto" />
+                    <button
+                      type="button"
+                      onClick={() => setLightbox(award.image)}
+                      className="block w-full focus-visible:outline focus-visible:outline-2"
+                      aria-label={`View larger version of ${award.title}`}
+                    >
+                      <img src={award.image} alt={award.title} className="w-full h-auto" />
+                    </button>
                   ) : (
                     <div
                       className="flex h-40 w-full items-center justify-center"
@@ -85,16 +95,30 @@ function About() {
               ))}
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              <img
-                src="/images/brand/award-red-carpet-photo.webp"
-                alt="Prince Adjei-Addo at the TC Shine Awards"
-                className="w-full h-auto rounded-xl"
-              />
-              <img
-                src="/images/brand/award-receiving-certificate.webp"
-                alt="Prince Adjei-Addo receiving his TC Shine Awards certificate"
-                className="w-full h-auto rounded-xl"
-              />
+              <button
+                type="button"
+                onClick={() => setLightbox('/images/brand/award-red-carpet-photo.webp')}
+                className="focus-visible:outline focus-visible:outline-2"
+                aria-label="View larger version of Prince Adjei-Addo at the TC Shine Awards"
+              >
+                <img
+                  src="/images/brand/award-red-carpet-photo.webp"
+                  alt="Prince Adjei-Addo at the TC Shine Awards"
+                  className="w-full h-auto rounded-xl"
+                />
+              </button>
+              <button
+                type="button"
+                onClick={() => setLightbox('/images/brand/award-receiving-certificate.webp')}
+                className="focus-visible:outline focus-visible:outline-2"
+                aria-label="View larger version of Prince Adjei-Addo receiving his TC Shine Awards certificate"
+              >
+                <img
+                  src="/images/brand/award-receiving-certificate.webp"
+                  alt="Prince Adjei-Addo receiving his TC Shine Awards certificate"
+                  className="w-full h-auto rounded-xl"
+                />
+              </button>
             </div>
             <div className="flex items-start gap-3 border-t pt-4" style={{ borderColor: 'var(--line)' }}>
               <MapPin className="mt-0.5 h-5 w-5 shrink-0" style={{ color: 'var(--gold)' }} />
@@ -128,6 +152,31 @@ function About() {
           </Reveal>
         </div>
       </div>
+
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Large view of photo"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white focus-visible:outline focus-visible:outline-2"
+            aria-label="Close large view"
+            onClick={() => setLightbox(null)}
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <img
+            src={lightbox}
+            alt="Large view"
+            className="max-h-full max-w-full rounded-lg object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   )
-}
+        }
