@@ -5,6 +5,7 @@ export const CATEGORIES = [
   'Event Flyer',
   'Travel Flyer',
   'Brand Flyer',
+  'Political Flyer',
   'Birthday Design',
   'Citation',
   'Seasonal',
