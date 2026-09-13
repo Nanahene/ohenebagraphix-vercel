@@ -6,6 +6,7 @@ import { Reveal } from '@/components/Reveal'
 import { PortfolioCard } from '@/components/site/PortfolioCard'
 import { imgUrl } from '@/lib/image'
 import { whatsappLink } from '@/lib/site-config'
+import { siteConfig } from '@/lib/site-config'
 
 export const Route = createFileRoute('/portfolio/$slug')({
   loader: ({ params }) => {
