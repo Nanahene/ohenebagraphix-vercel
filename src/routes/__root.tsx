@@ -22,7 +22,7 @@ export const Route = createRootRoute({
       { property: 'og:site_name', content: siteConfig.name },
       { property: 'og:title', content: `${siteConfig.name} — Design that moves people` },
       { property: 'og:description', content: siteConfig.description },
-      { property: 'og:image', content: '/images/brand/prince-adjei-addo.webp' },
+      { property: 'og:image', content: `${siteConfig.url}/images/brand/prince-adjei-addo.webp` },
       { property: 'og:url', content: siteConfig.url },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: `${siteConfig.name} — Design that moves people` },
