@@ -32,7 +32,7 @@ export const Route = createFileRoute('/portfolio/$slug')({
           { name: 'description', content: loaderData.project.description },
           { property: 'og:title', content: loaderData.project.title },
           { property: 'og:description', content: loaderData.project.description },
-          { property: 'og:image', content: loaderData.project.cover },
+          { property: 'og:image', content: `${siteConfig.url}${loaderData.project.cover}` },
         ]
       : [],
   }),
