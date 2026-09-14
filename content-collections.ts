@@ -7,6 +7,7 @@ export const CATEGORIES = [
   'Brand Flyer',
   'Political Flyer',
   'Birthday Design',
+  'Birthday Card Design',
   'Citation',
   'Seasonal',
   'Letterhead',
