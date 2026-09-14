@@ -1,14 +1,14 @@
 ---
 title: "Business President ID Card"
 client: "Kelvin Agbodza"
-category: "ID Card Design"
+category: "ID Card"
 description: "A school executive tag for Kelvin Agbodza, Business President at New Juaben Senior High School."
 cover: "/images/portfolio/kelvin-agbodza-business-president-tag.webp"
 gallery:
   - "/images/portfolio/kelvin-agbodza-business-president-tag.webp"
 year: "2026"
 tools: ["Canva", "Adobe Photoshop"]
-order: 27
+order: 31
 published: true
 ---
 
