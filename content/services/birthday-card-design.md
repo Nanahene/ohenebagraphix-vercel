@@ -2,7 +2,7 @@
 title: "Birthday Card Design"
 price: "GH₵30"
 summary: "Personalized birthday designs that celebrate someone's story."
-category: "Birthday Design"
+category: "Birthday Card Design"
 order: 13
 published: true
 ---
