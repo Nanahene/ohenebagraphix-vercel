@@ -19,7 +19,6 @@ export const CATEGORIES = [
   'Certificate',
   'Label',
   'ID Card',
-  'Brand Identity',
 ] as const
 
 const portfolio = defineCollection({
