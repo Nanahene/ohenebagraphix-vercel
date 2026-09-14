@@ -20,7 +20,7 @@ export const Route = createFileRoute('/services')({
 
 function Services() {
   const services = [...allServices].filter((s) => s.published).sort((a, b) => a.order - b.order)
-  const portfolio = [...allPortfolios].filter((p) => p.published)
+  const portfolio = [...allPortfolios].filter((p) => p.published).sort((a, b) => a.order - b.order)
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
