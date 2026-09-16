@@ -3,9 +3,9 @@ title: "Esi Premium Hub House Party"
 client: "Esi Premium Hub"
 category: "Event Flyer"
 description: "A House Party event flyer for Esi Premium Hub, featuring event details, rate, and activity lineup."
-cover: "/images/portfolio/esi-premium-hub-house-party-2026.webp"
+cover: "/images/portfolio/esi-premium-hub-house-party.webp"
 gallery:
-  - "/images/portfolio/esi-premium-hub-house-party-2026.webp"
+  - "/images/portfolio/esi-premium-hub-house-party.webp"
 year: "2026"
 tools: ["Canva", "Adobe Photoshop"]
 order: 32
