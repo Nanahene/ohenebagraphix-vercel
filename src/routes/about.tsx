@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Award, MapPin, X } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { imgUrl } from '@/lib/image'
+import { CountUp } from '@/components/CountUp'
 import { siteConfig } from '@/lib/site-config'
 
 export const Route = createFileRoute('/about')({
@@ -132,7 +133,7 @@ function About() {
             {siteConfig.stats.map((stat) => (
               <div key={stat.label}>
                 <p className="font-display text-2xl font-semibold" style={{ color: 'var(--clay)' }}>
-                  {stat.value}
+                  <CountUp value={stat.value} />
                 </p>
                 <p className="mt-1 text-xs" style={{ color: 'var(--ink-soft)' }}>
                   {stat.label}
