@@ -2,6 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { allPortfolios, allTestimonials } from 'content-collections'
 import { ArrowRight, Quote } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
+import { CountUp } from '@/components/CountUp'
 import { PortfolioCard } from '@/components/site/PortfolioCard'
 import { HeroCarousel } from '@/components/site/HeroCarousel'
 import { siteConfig, whatsappLink } from '@/lib/site-config'
@@ -74,7 +75,7 @@ function Home() {
                 <div key={stat.label}>
                   <dt className="sr-only">{stat.label}</dt>
                   <dd className="font-display text-3xl font-semibold" style={{ color: 'var(--clay)' }}>
-                    {stat.value}
+                    <CountUp value={stat.value} />
                   </dd>
                   <dd className="mt-1 text-xs font-medium leading-snug" style={{ color: 'var(--ink-soft)' }}>
                     {stat.label}
