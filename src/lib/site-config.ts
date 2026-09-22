@@ -7,9 +7,9 @@ export const siteConfig = {
   tagline: 'Creative. Professional. Impactful.',
   heroHeadline: 'Design that moves people. Crafted, not templated.',
   heroIntro:
-    "I'm Prince Adjei-Addo, founder of Ohenebagraphix. For two years I've been designing flyers, citations, brand identity and print collateral that Ghanaian brands and creators actually want to share.",
+    "I'm Prince Adjei-Addo, founder of Ohenebagraphix. For two years I've been designing flyers, citations, brand designs and print collateral that Ghanaian brands and creators actually want to share.",
   description:
-    'Ohenebagraphix is a one-person design studio in Accra, Ghana, crafting flyers, brand identity and print collateral for clients across Ghana and around the world.',
+    'Ohenebagraphix is a one-person design studio in Accra, Ghana, crafting flyers, brands designs and print collateral for clients across Ghana and around the world.',
   url: 'https://ohenebagraphix.com',
   location: 'Dansoman, Accra, Ghana',
   email: 'adjeiaddoprince@gmail.com',
