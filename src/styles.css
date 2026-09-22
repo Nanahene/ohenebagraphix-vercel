@@ -50,6 +50,18 @@ code {
   --gold: #c9932f;
   --gold-soft: #e4c580;
   --line: #ded0b4;
+  
+:root.dark {
+  --paper: #1a140f;
+  --paper-warm: #241b14;
+  --ink: #f7f1e7;
+  --ink-soft: #cbbfae;
+  --clay: #e08a5e;
+  --clay-dark: #d97a54;
+  --gold: #d9a94c;
+  --gold-soft: #e4c580;
+  --line: #3a2f24;
+  }
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
