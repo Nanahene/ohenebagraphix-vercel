@@ -11,7 +11,7 @@ export const Route = createFileRoute('/pricing')({
       {
         name: 'description',
         content:
-          'Transparent pricing for flyer design, invitations, brochures, business cards, letterheads and full brand identity systems from Ohenebagraphix.',
+          'Transparent pricing for flyer design, invitations, brochures, business cards, letterheads and brand designs from Ohenebagraphix.',
       },
     ],
   }),
