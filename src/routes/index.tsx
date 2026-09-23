@@ -251,11 +251,11 @@ function Home() {
       {/* CTA band */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <Reveal
-          className="flex flex-col items-start gap-6 rounded-3xl px-8 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-12"
-          style={{ backgroundColor: 'var(--ink)' }}
+          className="flex flex-col items-start gap-6 rounded-3xl px-8 py-12 sm:flex-row sm:items-center sm:justify-between"
+          style={{ backgroundColor: 'var(--ink-fixed)' }}
         >
           <div>
-            <h2 className="font-display text-2xl font-semibold sm:text-3xl" style={{ color: 'var(--paper)' }}>
+            <h2 className="font-display text-2xl font-semibold sm:text-3xl" style={{ color: 'var(--paper-fixed)' }}>
               Have a project in mind?
             </h2>
             <p className="mt-2 max-w-md text-sm" style={{ color: '#cbbfae' }}>
@@ -266,7 +266,7 @@ function Home() {
             <Link
               to="/contact"
               className="rounded-full px-6 py-3 text-sm font-semibold"
-              style={{ backgroundColor: 'var(--clay)', color: 'var(--paper)' }}
+              style={{ backgroundColor: 'var(--clay)', color: 'var(--paper-fixed)' }}
             >
               Start a Project
             </Link>
