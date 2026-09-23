@@ -11,33 +11,83 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: `${siteConfig.name} — Graphic Designer in Accra, Ghana` },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        title: `${siteConfig.name} — Graphic Designer in Accra, Ghana`,
+      },
       {
         name: 'description',
         content: siteConfig.description,
       },
-      { name: 'theme-color', content: '#241b14' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:site_name', content: siteConfig.name },
-      { property: 'og:title', content: `${siteConfig.name} — Design that moves people` },
-      { property: 'og:description', content: siteConfig.description },
-      { property: 'og:image', content: `${siteConfig.url}/images/brand/prince-adjei-addo.webp` },
-      { property: 'og:url', content: siteConfig.url },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: `${siteConfig.name} — Design that moves people` },
-      { name: 'twitter:description', content: siteConfig.description },
-      { name: 'twitter:image', content: '/images/brand/prince-adjei-addo.webp' },
+      {
+        name: 'theme-color',
+        content: '#241b14',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:site_name',
+        content: siteConfig.name,
+      },
+      {
+        property: 'og:title',
+        content: `${siteConfig.name} — Design that moves people`,
+      },
+      {
+        property: 'og:description',
+        content: siteConfig.description,
+      },
+      {
+        property: 'og:image',
+        content: `${siteConfig.url}/images/brand/prince-adjei-addo.webp`,
+      },
+      {
+        property: 'og:url',
+        content: siteConfig.url,
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:title',
+        content: `${siteConfig.name} — Design that moves people`,
+      },
+      {
+        name: 'twitter:description',
+        content: siteConfig.description,
+      },
+      {
+        name: 'twitter:image',
+        content: '/images/brand/prince-adjei-addo.webp',
+      },
     ],
+
     links: [
-      { rel: 'icon', href: '/favicon.ico' },
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossOrigin: 'anonymous',
+      },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap',
       },
     ],
+
     scripts: [
       {
         type: 'application/ld+json',
@@ -68,8 +118,30 @@ export const Route = createRootRoute({
           ],
         }),
       },
+
+      /*
+       * Apply the saved/system theme before React renders.
+       * This reduces the light-mode flash on dark-mode devices.
+       */
+      {
+        children: `
+          (() => {
+            try {
+              const savedTheme = localStorage.getItem('theme');
+              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+              document.documentElement.classList.toggle('dark', isDark);
+              document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+            } catch (error) {
+              console.warn('Theme initialization failed:', error);
+            }
+          })();
+        `,
+      },
     ],
   }),
+
   shellComponent: RootDocument,
   notFoundComponent: NotFound,
 })
@@ -80,6 +152,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
+
       <body>
         <a
           href="#main-content"
@@ -87,16 +160,23 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         >
           Skip to content
         </a>
+
         <div className="grain-overlay" />
+
         <div className="flex min-h-screen flex-col">
           <Header />
+
           <main id="main-content" className="flex-1">
             {children}
           </main>
+
           <Footer />
         </div>
+
         <WhatsAppFloat />
+
         <Analytics />
+
         <Scripts />
       </body>
     </html>
@@ -106,31 +186,51 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 function NotFound() {
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-2xl flex-col items-center justify-center px-6 py-24 text-center">
-      <p className="font-display text-8xl font-semibold" style={{ color: 'var(--clay)' }}>
+      <p
+        className="font-display text-8xl font-semibold"
+        style={{ color: 'var(--clay)' }}
+      >
         404
       </p>
-      <h1 className="mt-4 font-display text-3xl font-semibold" style={{ color: 'var(--ink)' }}>
+
+      <h1
+        className="mt-4 font-display text-3xl font-semibold"
+        style={{ color: 'var(--ink)' }}
+      >
         This page wandered off the canvas.
       </h1>
-      <p className="mt-3 text-base" style={{ color: 'var(--ink-soft)' }}>
-        The page you're looking for doesn't exist or may have moved. Let's get you back on track.
+
+      <p
+        className="mt-3 text-base"
+        style={{ color: 'var(--ink-soft)' }}
+      >
+        The page you're looking for doesn't exist or may have moved. Let's get
+        you back on track.
       </p>
+
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           to="/"
           className="rounded-full px-6 py-3 text-sm font-semibold"
-          style={{ backgroundColor: 'var(--clay)', color: 'var(--paper)' }}
+          style={{
+            backgroundColor: 'var(--clay)',
+            color: 'var(--paper)',
+          }}
         >
           Back to Home
         </Link>
+
         <Link
           to="/portfolio"
           className="rounded-full border px-6 py-3 text-sm font-semibold"
-          style={{ borderColor: 'var(--line)', color: 'var(--ink)' }}
+          style={{
+            borderColor: 'var(--line)',
+            color: 'var(--ink)',
+          }}
         >
           See the Work
         </Link>
       </div>
     </div>
   )
-}
+            }
