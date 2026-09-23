@@ -118,10 +118,8 @@ export const Route = createRootRoute({
           ],
         }),
       },
-
       /*
-       * Apply the saved/system theme before React renders.
-       * This reduces the light-mode flash on dark-mode devices.
+       * Applies the saved/system theme before React renders to avoid a white flash on load.
        */
       {
         children: `
@@ -233,4 +231,5 @@ function NotFound() {
       </div>
     </div>
   )
-            }
+          }
+          
