@@ -4,42 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-body {
-  @apply m-0;
-  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--paper);
-  color: var(--ink);
-}
-
-.font-display {
-  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
-  font-optical-sizing: auto;
-}
-
-.field-input {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 0.75rem;
-  background-color: var(--paper);
-  padding: 0.65rem 0.9rem;
-  font-size: 0.9rem;
-  color: var(--ink);
-  transition: border-color 150ms ease, box-shadow 150ms ease;
-}
-
-.field-input:focus-visible {
-  outline: none;
-  border-color: var(--clay);
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--clay) 20%, transparent);
-}
-
-code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 :root {
   --paper: #f7f1e7;
   --paper-warm: #efe4d2;
@@ -50,18 +14,6 @@ code {
   --gold: #c9932f;
   --gold-soft: #e4c580;
   --line: #ded0b4;
-  
-:root.dark {
-  --paper: #1a140f;
-  --paper-warm: #241b14;
-  --ink: #f7f1e7;
-  --ink-soft: #cbbfae;
-  --clay: #e08a5e;
-  --clay-dark: #d97a54;
-  --gold: #d9a94c;
-  --gold-soft: #e4c580;
-  --line: #3a2f24;
-  }
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -88,6 +40,7 @@ code {
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.5rem;
+
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.141 0.005 285.823);
   --sidebar-primary: oklch(0.21 0.006 285.885);
@@ -96,6 +49,62 @@ code {
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.871 0.006 286.286);
+}
+
+/* Dark mode */
+.dark {
+  --paper: #15110e;
+  --paper-warm: #211a14;
+  --ink: #f4eadc;
+  --ink-soft: #cbbca9;
+  --clay: #d96b43;
+  --clay-dark: #b94f2d;
+  --gold: #d9a63e;
+  --gold-soft: #b98b3c;
+  --line: #3a3028;
+
+  --background: oklch(0.15 0.012 55);
+  --foreground: oklch(0.94 0.018 75);
+
+  --card: oklch(0.19 0.014 55);
+  --card-foreground: oklch(0.94 0.018 75);
+
+  --popover: oklch(0.19 0.014 55);
+  --popover-foreground: oklch(0.94 0.018 75);
+
+  --primary: oklch(0.72 0.14 55);
+  --primary-foreground: oklch(0.14 0.012 55);
+
+  --secondary: oklch(0.24 0.018 55);
+  --secondary-foreground: oklch(0.91 0.02 75);
+
+  --muted: oklch(0.24 0.018 55);
+  --muted-foreground: oklch(0.7 0.025 70);
+
+  --accent: oklch(0.27 0.025 55);
+  --accent-foreground: oklch(0.94 0.018 75);
+
+  --destructive: oklch(0.65 0.2 27);
+  --destructive-foreground: oklch(0.97 0.01 75);
+
+  --border: oklch(0.29 0.02 55);
+  --input: oklch(0.29 0.02 55);
+  --ring: oklch(0.62 0.12 55);
+
+  --chart-1: oklch(0.72 0.14 55);
+  --chart-2: oklch(0.65 0.12 145);
+  --chart-3: oklch(0.58 0.12 220);
+  --chart-4: oklch(0.75 0.15 85);
+  --chart-5: oklch(0.7 0.14 40);
+
+  --sidebar: oklch(0.17 0.014 55);
+  --sidebar-foreground: oklch(0.94 0.018 75);
+  --sidebar-primary: oklch(0.72 0.14 55);
+  --sidebar-primary-foreground: oklch(0.14 0.012 55);
+  --sidebar-accent: oklch(0.24 0.018 55);
+  --sidebar-accent-foreground: oklch(0.94 0.018 75);
+  --sidebar-border: oklch(0.29 0.02 55);
+  --sidebar-ring: oklch(0.62 0.12 55);
 }
 
 @theme inline {
@@ -137,16 +146,90 @@ code {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: var(--paper);
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply m-0 bg-background text-foreground;
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--paper);
+  color: var(--ink);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-optical-sizing: auto;
+}
+
+.field-input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background-color: var(--paper);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.field-input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+
+.field-input:focus-visible {
+  outline: none;
+  border-color: var(--clay);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--clay) 20%, transparent);
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
 @layer base {
   * {
     @apply outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* Reveal-on-scroll: subtle, respects reduced motion */
+/* Smooth theme transition */
+html,
+body,
+header,
+button,
+a,
+input,
+textarea,
+select {
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+/* Reveal-on-scroll */
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -155,6 +238,7 @@ code {
     transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
+
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
@@ -166,7 +250,16 @@ code {
     transform: none;
     transition: none;
   }
-  * {
+
+  *,
+  html,
+  body,
+  header,
+  button,
+  a,
+  input,
+  textarea,
+  select {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -174,16 +267,12 @@ code {
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 ::selection {
   background-color: var(--clay);
   color: var(--paper);
 }
 
-/* Custom scrollbar accents used on the site (not tied to overflow containers) */
+/* Grain overlay */
 .grain-overlay {
   pointer-events: none;
   position: fixed;
@@ -193,3 +282,8 @@ html {
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+.dark .grain-overlay {
+  opacity: 0.025;
+  mix-blend-mode: screen;
+  }
