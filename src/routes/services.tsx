@@ -98,10 +98,10 @@ function Services() {
 
       <Reveal
         className="mt-16 flex flex-col items-start gap-5 rounded-3xl px-8 py-10 sm:flex-row sm:items-center sm:justify-between"
-        style={{ backgroundColor: 'var(--ink)' }}
+        style={{ backgroundColor: 'var(--ink-fixed)' }}
       >
         <div>
-          <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--paper)' }}>
+          <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--paper-fixed)' }}>
             Not sure what you need?
           </h2>
           <p className="mt-1 text-sm" style={{ color: '#cbbfae' }}>
@@ -111,7 +111,7 @@ function Services() {
         <Link
           to="/contact"
           className="rounded-full px-6 py-3 text-sm font-semibold"
-          style={{ backgroundColor: 'var(--clay)', color: 'var(--paper)' }}
+          style={{ backgroundColor: 'var(--clay)', color: 'var(--paper-fixed)' }}
         >
           Start a Project
         </Link>
