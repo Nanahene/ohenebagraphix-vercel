@@ -35,26 +35,17 @@ export function Header() {
       return
     }
 
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)',
-    ).matches
-
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     setDarkMode(prefersDark)
-
     document.documentElement.classList.toggle('dark', prefersDark)
-    document.documentElement.style.colorScheme = prefersDark
-      ? 'dark'
-      : 'light'
+    document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light'
   }, [])
 
   const toggleDarkMode = () => {
     const nextMode = !darkMode
-
     setDarkMode(nextMode)
-
     document.documentElement.classList.toggle('dark', nextMode)
     document.documentElement.style.colorScheme = nextMode ? 'dark' : 'light'
-
     localStorage.setItem('theme', nextMode ? 'dark' : 'light')
   }
 
@@ -63,8 +54,7 @@ export function Header() {
       className="sticky top-0 z-40 border-b backdrop-blur"
       style={{
         borderColor: 'var(--line)',
-        backgroundColor:
-          'color-mix(in oklab, var(--paper) 88%, transparent)',
+        backgroundColor: 'color-mix(in oklab, var(--paper) 88%, transparent)',
       }}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
@@ -105,17 +95,11 @@ export function Header() {
             aria-pressed={darkMode}
             title={darkMode ? 'Light mode' : 'Dark mode'}
           >
-            {darkMode ? (
-              <Sun className="h-4.5 w-4.5" />
-            ) : (
-              <Moon className="h-4.5 w-4.5" />
-            )}
+            {darkMode ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
           </button>
 
           <a
-            href={whatsappLink(
-              "Hi Prince, I'd like to start a project with Ohenebagraphix.",
-            )}
+            href={whatsappLink("Hi Prince, I'd like to start a project with Ohenebagraphix.")}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium underline-offset-4 hover:underline"
@@ -148,11 +132,7 @@ export function Header() {
             aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             aria-pressed={darkMode}
           >
-            {darkMode ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
+            {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
 
           <button
@@ -166,11 +146,7 @@ export function Header() {
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
           >
-            {open ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
@@ -178,9 +154,7 @@ export function Header() {
       <div
         className={cn(
           'overflow-y-auto overflow-x-hidden border-t transition-[max-height] duration-300 ease-out lg:hidden',
-          open
-            ? 'max-h-[calc(100vh-4.5rem)]'
-            : 'max-h-0 border-t-0',
+          open ? 'max-h-[calc(100vh-4.5rem)]' : 'max-h-0 border-t-0',
         )}
         style={{
           borderColor: 'var(--line)',
@@ -215,9 +189,7 @@ export function Header() {
           </Link>
 
           <a
-            href={whatsappLink(
-              "Hi Prince, I'd like to start a project with Ohenebagraphix.",
-            )}
+            href={whatsappLink("Hi Prince, I'd like to start a project with Ohenebagraphix.")}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-1 rounded-full border px-5 py-3 text-center text-base font-semibold"
@@ -232,4 +204,5 @@ export function Header() {
       </div>
     </header>
   )
-  }
+              }
+          
