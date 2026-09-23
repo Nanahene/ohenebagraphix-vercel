@@ -15,27 +15,40 @@ const quickLinks = [
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: 'var(--ink)', color: 'var(--paper)' }}>
+    <footer 
+      className="border-t"
+      style={{ 
+        backgroundColor: 'var(--paper-warm)', 
+        borderColor: 'var(--line)',
+        color: 'var(--ink)' 
+      }}
+    >
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-display text-2xl font-semibold">Ohenebagraphix</p>
-          <p className="mt-1 text-sm font-medium tracking-wide" style={{ color: 'var(--gold-soft)' }}>
+          <p className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
+            Ohenebagraphix
+          </p>
+          <p className="mt-1 text-sm font-medium tracking-wide" style={{ color: 'var(--gold)' }}>
             {siteConfig.tagline}
           </p>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed" style={{ color: '#cbbfae' }}>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
             A one-person design studio based in Accra, working with brands and creators around the world.
           </p>
           <SocialLinks className="mt-6" />
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'var(--gold-soft)' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'var(--gold)' }}>
             Quick links
           </p>
           <ul className="mt-4 space-y-2">
             {quickLinks.map((link) => (
               <li key={link.to}>
-                <Link to={link.to} className="text-sm hover:underline" style={{ color: '#e8ded0' }}>
+                <Link 
+                  to={link.to} 
+                  className="text-sm transition-colors hover:underline" 
+                  style={{ color: 'var(--ink-soft)' }}
+                >
                   {link.label}
                 </Link>
               </li>
@@ -44,40 +57,40 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'var(--gold-soft)' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'var(--gold)' }}>
             Get in touch
           </p>
-          <ul className="mt-4 space-y-3 text-sm" style={{ color: '#e8ded0' }}>
+          <ul className="mt-4 space-y-3 text-sm" style={{ color: 'var(--ink-soft)' }}>
             <li className="flex items-start gap-2">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+              <Phone className="mt-0.5 h-4 w-4 shrink-0" style={{ color: 'var(--clay)' }} />
               <a href={`tel:${siteConfig.whatsappNumber}`} className="hover:underline">
                 {siteConfig.phoneDisplay}
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <Mail className="mt-0.5 h-4 w-4 shrink-0" />
+              <Mail className="mt-0.5 h-4 w-4 shrink-0" style={{ color: 'var(--clay)' }} />
               <a href={`mailto:${siteConfig.email}`} className="hover:underline break-all">
                 {siteConfig.email}
               </a>
             </li>
             <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0" style={{ color: 'var(--clay)' }} />
               <span>{siteConfig.location}</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t" style={{ borderColor: '#3a2f24' }}>
+      <div className="border-t" style={{ borderColor: 'var(--line)' }}>
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-6 sm:px-8">
-          <p className="text-xs" style={{ color: '#9c8d78' }}>
+          <p className="text-xs" style={{ color: 'var(--ink-soft)' }}>
             © 2025-2026 Ohenebagraphix — Prince Adjei-Addo. All rights reserved.
           </p>
-          <Link to="/privacy" className="text-xs hover:underline" style={{ color: '#9c8d78' }}>
+          <Link to="/privacy" className="text-xs hover:underline" style={{ color: 'var(--ink-soft)' }}>
             Privacy Policy
           </Link>
         </div>
       </div>
     </footer>
   )
-      }
+}
