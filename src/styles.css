@@ -56,7 +56,7 @@
   --paper: #15110e;
   --paper-warm: #211a14;
   --ink: #f4eadc;
-  --ink-soft: #e0d4c5;
+  --ink-soft: #cbbca9;
   --clay: #d96b43;
   --clay-dark: #b94f2d;
   --gold: #d9a63e;
@@ -111,7 +111,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+  --color-card-foreground: var(--color-card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
@@ -200,79 +200,18 @@ body {
 }
 
 code {
-  font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 @layer base {
   * {
     @apply outline-ring/50;
   }
-
   body {
     @apply bg-background text-foreground;
   }
 }
 
-/* Smooth theme transition */
-html,
-body,
-header,
-button,
-a,
-input,
-textarea,
-select {
-  transition:
-    background-color 200ms ease,
-    border-color 200ms ease,
-    color 200ms ease;
-}
-
-/* Reveal-on-scroll */
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition:
-    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  *,
-  html,
-  body,
-  header,
-  button,
-  a,
-  input,
-  textarea,
-  select {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-::selection {
-  background-color: var(--clay);
-  color: var(--paper);
-}
-
-/* Grain overlay */
 .grain-overlay {
   pointer-events: none;
   position: fixed;
@@ -281,9 +220,5 @@ select {
   opacity: 0.035;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-.dark .grain-overlay {
-  opacity: 0.025;
-  mix-blend-mode: screen;
   }
+  
