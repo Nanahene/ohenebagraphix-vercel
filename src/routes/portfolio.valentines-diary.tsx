@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState } from 'react'
 import { ArrowLeft, ArrowRight, X } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
-import { whatsappLink } from '@/lib/site-config'
+import { siteConfig, whatsappLink } from '@/lib/site-config'
 
 export const Route = createFileRoute('/portfolio/valentines-diary')({
   head: () => ({
@@ -13,6 +13,13 @@ export const Route = createFileRoute('/portfolio/valentines-diary')({
         content:
           "Valentine's Diary: an independent creative project by Ohenebagraphix. A personalized printed diary designed as a Valentine's Day gift, made to be kept and used long after the occasion.",
       },
+      { property: 'og:title', content: "Valentine's Diary - Ohenebagraphix" },
+      {
+        property: 'og:description',
+        content:
+          "An independent creative project: a personalized printed diary designed as a Valentine's Day gift.",
+      },
+      { property: 'og:image', content: `${siteConfig.url}/images/portfolio/valentines-diary-01-cover.webp` },
     ],
   }),
   component: ValentinesDiary,
