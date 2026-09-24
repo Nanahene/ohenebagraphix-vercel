@@ -275,7 +275,7 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border px-6 py-3 text-sm font-semibold"
-              style={{ borderColor: '#5a4c3c', color: 'var(--paper)' }}
+              style={{ borderColor: '#5a4c3c', color: 'var(--paper-fixed)' }}
             >
               WhatsApp Me
             </a>
