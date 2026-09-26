@@ -4,6 +4,7 @@ import { ArrowRight, Quote } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { CountUp } from '@/components/CountUp'
 import { PortfolioCard } from '@/components/site/PortfolioCard'
+import { SplashScreen } from '@/components/site/SplashScreen'
 import { HeroCarousel } from '@/components/site/HeroCarousel'
 import { siteConfig, whatsappLink } from '@/lib/site-config'
 
@@ -33,6 +34,7 @@ function Home() {
 
   return (
     <div>
+      <SplashScreen />
       {/* Hero */}
       <section className="relative overflow-hidden border-b" style={{ borderColor: 'var(--line)' }}>
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
