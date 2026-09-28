@@ -16,6 +16,7 @@ export const CATEGORIES = [
   'Brochure',
   'Calendar',
   'T-Shirt/Mockup',
+  'Cloth Design',
   'Certificate',
   'Label',
   'ID Card',
