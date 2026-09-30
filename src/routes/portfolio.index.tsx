@@ -19,6 +19,27 @@ export const Route = createFileRoute('/portfolio/')({
   component: Portfolio,
 })
 
+const featuredCaseStudies = [
+  {
+    slug: 'valentines-diary',
+    badge: 'Independent Project',
+    title: "Valentine's Diary",
+    description:
+      "A personalized printed diary designed as a Valentine's Day gift, made to be kept and used long after the occasion.",
+    cover: '/images/portfolio/valentines-diary-01-cover.webp',
+    alt: "Valentine's Diary independent project",
+  },
+  {
+    slug: 'gradference-26',
+    badge: 'Event Branding & Campaign Design',
+    title: "GRADFERENCE'26 - TC Shine Awards",
+    description:
+      'A full event branding and campaign system for THEC, carried from digital promo material through to a live red-carpet dinner and awards night.',
+    cover: '/images/portfolio/gradference-26-cover.webp',
+    alt: "GRADFERENCE'26 - TC Shine Awards event branding case study",
+  },
+]
+
 function Portfolio() {
   const projects = useMemo(
     () => [...allPortfolios].filter((p) => p.published).sort((a, b) => a.order - b.order),
@@ -91,47 +112,51 @@ function Portfolio() {
 
       <div className="mt-20 border-t pt-14" style={{ borderColor: 'var(--line)' }}>
         <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--clay-dark)' }}>
-          Independent Projects
+          Case Studies
         </p>
         <h2 className="font-display mt-3 text-2xl font-semibold sm:text-3xl" style={{ color: 'var(--ink)' }}>
-          Personal work, made outside client briefs
+          In-depth looks at select projects
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-          Self-initiated projects built purely out of creative interest, kept separate from client work above.
+          A closer look at a few projects, personal and commissioned, told from brief to outcome.
         </p>
 
-        <Link
-          to="/portfolio/valentines-diary"
-          className="group mt-8 grid gap-0 overflow-hidden rounded-2xl border transition-shadow duration-300 hover:shadow-xl sm:grid-cols-2"
-          style={{ borderColor: 'var(--line)' }}
-        >
-          <div className="aspect-[4/3] overflow-hidden sm:aspect-auto" style={{ backgroundColor: 'var(--paper-warm)' }}>
-            <img
-              src="/images/portfolio/valentines-diary-01-cover.webp"
-              alt="Valentine's Diary independent project"
-              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-            />
-          </div>
-          <div className="flex flex-col justify-center p-6 sm:p-8">
-            <span
-              className="inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
-              style={{ backgroundColor: 'var(--paper-warm)', color: 'var(--clay-dark)' }}
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          {featuredCaseStudies.map((project) => (
+            <Link
+              key={project.slug}
+              to={`/portfolio/${project.slug}`}
+              className="group grid gap-0 overflow-hidden rounded-2xl border transition-shadow duration-300 hover:shadow-xl sm:grid-cols-2"
+              style={{ borderColor: 'var(--line)' }}
             >
-              Independent Project
-            </span>
-            <h3 className="font-display mt-3 text-xl font-semibold" style={{ color: 'var(--ink)' }}>
-              Valentine's Diary
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-              A personalized printed diary designed as a Valentine's Day gift, made to be kept and used long after
-              the occasion.
-            </p>
-            <span className="mt-4 text-sm font-semibold" style={{ color: 'var(--clay-dark)' }}>
-              View case study &#8594;
-            </span>
-          </div>
-        </Link>
+              <div className="aspect-[4/3] overflow-hidden sm:aspect-auto" style={{ backgroundColor: 'var(--paper-warm)' }}>
+                <img
+                  src={project.cover}
+                  alt={project.alt}
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-6 sm:p-8">
+                <span
+                  className="inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"
+                  style={{ backgroundColor: 'var(--paper-warm)', color: 'var(--clay-dark)' }}
+                >
+                  {project.badge}
+                </span>
+                <h3 className="font-display mt-3 text-xl font-semibold" style={{ color: 'var(--ink)' }}>
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
+                  {project.description}
+                </p>
+                <span className="mt-4 text-sm font-semibold" style={{ color: 'var(--clay-dark)' }}>
+                  View case study &#8594;
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   )
-}
+      }
