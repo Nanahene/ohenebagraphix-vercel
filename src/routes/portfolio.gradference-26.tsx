@@ -31,6 +31,7 @@ const galleryImages = [
   'gradference-26-winner-kelvin.webp',
   'gradference-26-performance-2.webp',
   'gradference-26-red-carpet-group-2.webp',
+  'gradference-26-hamid-red-carpet-host.webp',
 ]
 
 function Gradference26() {
@@ -104,6 +105,22 @@ function Gradference26() {
         </p>
       </Reveal>
 
+      {/* THEME IMAGE (moved: after Overview, before The Brief) */}
+      <Reveal delay={100} className="mt-8">
+        <button
+          type="button"
+          onClick={() => setLightbox('/images/portfolio/gradference-26-theme.webp')}
+          className="mx-auto block max-w-md overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
+          <img
+            src="/images/portfolio/gradference-26-theme.webp"
+            alt="GRADFERENCE'26 theme announcement design"
+            className="w-full object-cover"
+          />
+        </button>
+      </Reveal>
+
       {/* THE BRIEF */}
       <Reveal delay={120} className="mx-auto mt-12 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
@@ -115,7 +132,7 @@ function Gradference26() {
         </p>
       </Reveal>
 
-      {/* CREATIVE DIRECTION */}
+      {/* CREATIVE DIRECTION (now repeats the main event flyer) */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Creative Direction
@@ -129,13 +146,13 @@ function Gradference26() {
       <Reveal delay={100} className="mt-8">
         <button
           type="button"
-          onClick={() => setLightbox('/images/portfolio/gradference-26-theme.webp')}
+          onClick={() => setLightbox('/images/portfolio/gradference-26-cover.webp')}
           className="mx-auto block max-w-md overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
           style={{ borderColor: 'var(--line)' }}
         >
           <img
-            src="/images/portfolio/gradference-26-theme.webp"
-            alt="GRADFERENCE'26 theme announcement design"
+            src="/images/portfolio/gradference-26-cover.webp"
+            alt="GRADFERENCE'26 main event artwork showing the red, black and gold palette"
             className="w-full object-cover"
           />
         </button>
@@ -199,7 +216,7 @@ function Gradference26() {
         </button>
       </Reveal>
 
-      {/* TC SHINE AWARDS */}
+      {/* TC SHINE AWARDS (certificate before nominee flyers; Isaac's nominee design added) */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           TC Shine Awards
@@ -225,6 +242,18 @@ function Gradference26() {
         </button>
         <button
           type="button"
+          onClick={() => setLightbox('/images/portfolio/gradference-26-certificate-fiifi.webp')}
+          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
+          <img
+            src="/images/portfolio/gradference-26-certificate-fiifi.webp"
+            alt="Certificate of Nomination, Addo Isaac Fiifi"
+            className="w-full object-cover"
+          />
+        </button>
+        <button
+          type="button"
           onClick={() => setLightbox('/images/portfolio/gradference-26-nominee-christiana.webp')}
           className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
           style={{ borderColor: 'var(--line)' }}
@@ -237,19 +266,19 @@ function Gradference26() {
         </button>
         <button
           type="button"
-          onClick={() => setLightbox('/images/portfolio/gradference-26-certificate-fiifi.webp')}
+          onClick={() => setLightbox('/images/portfolio/gradference-26-nominee-isaac.webp')}
           className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
           style={{ borderColor: 'var(--line)' }}
         >
           <img
-            src="/images/portfolio/gradference-26-certificate-fiifi.webp"
-            alt="Certificate of Nomination, Addo Isaac Fiifi"
+            src="/images/portfolio/gradference-26-nominee-isaac.webp"
+            alt="TC Shine Awards nominee graphic, Fiifi Addo"
             className="w-full object-cover"
           />
         </button>
       </Reveal>
 
-      {/* FROM DIGITAL DESIGN TO REAL-WORLD EXPERIENCE */}
+      {/* FROM DIGITAL DESIGN TO REAL-WORLD EXPERIENCE (host image now captioned) */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           From Digital Design to Real-World Experience
@@ -261,14 +290,18 @@ function Gradference26() {
       </Reveal>
 
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2">
-        <button
-          type="button"
-          onClick={() => setLightbox('/images/portfolio/gradference-26-host.webp')}
-          className="overflow-hidden rounded-2xl border focus-visible:outline focus-visible:outline-2"
-          style={{ borderColor: 'var(--line)' }}
-        >
-          <img src="/images/portfolio/gradference-26-host.webp" alt="Event host speaking on mic" className="w-full object-cover" />
-        </button>
+        <div className="relative overflow-hidden rounded-2xl border" style={{ borderColor: 'var(--line)' }}>
+          <button
+            type="button"
+            onClick={() => setLightbox('/images/portfolio/gradference-26-host.webp')}
+            className="block w-full focus-visible:outline focus-visible:outline-2"
+          >
+            <img src="/images/portfolio/gradference-26-host.webp" alt="Event host speaking on mic" className="w-full object-cover" />
+          </button>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3">
+            <p className="text-sm font-semibold text-white">Brian Boafo, Event Director</p>
+          </div>
+        </div>
         <button
           type="button"
           onClick={() => setLightbox('/images/portfolio/gradference-26-hosts-red-carpet.webp')}
@@ -283,7 +316,7 @@ function Gradference26() {
         </button>
       </Reveal>
 
-      {/* THE OUTCOME */}
+      {/* THE OUTCOME (reordered: performance, winner holding award+citation, citation presentation, group photo) */}
       <Reveal delay={100} className="mx-auto mt-14 max-w-2xl">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           The Outcome
@@ -296,9 +329,9 @@ function Gradference26() {
 
       <Reveal delay={100} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { src: 'gradference-26-award-presentation-1.webp', alt: 'Award presentation moment' },
-          { src: 'gradference-26-winner-fiifi.webp', alt: 'Best Athlete of the Year winner, Addo Isaac Fiifi' },
           { src: 'gradference-26-performance-1.webp', alt: 'Live performance on event day' },
+          { src: 'gradference-26-winner-fiifi.webp', alt: 'Best Athlete of the Year winner holding his award and citation, Addo Isaac Fiifi' },
+          { src: 'gradference-26-award-presentation-1.webp', alt: 'Citation being presented to Addo Isaac Fiifi' },
           { src: 'gradference-26-red-carpet-group-1.webp', alt: 'Guests on the red carpet' },
         ].map((item) => (
           <button
@@ -330,7 +363,7 @@ function Gradference26() {
         </ul>
       </Reveal>
 
-      {/* FULL GALLERY */}
+      {/* FULL GALLERY (Hamid with Red Carpet Host added) */}
       <div className="mt-16">
         <h2 className="font-display text-2xl font-semibold" style={{ color: 'var(--ink)' }}>
           Full Gallery
@@ -414,4 +447,4 @@ function Gradference26() {
       </div>
     </div>
   )
-      }
+          }
