@@ -299,7 +299,7 @@ function Gradference26() {
             <img src="/images/portfolio/gradference-26-host.webp" alt="Event host speaking on mic" className="w-full object-cover" />
           </button>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3">
-            <p className="text-sm font-semibold text-white">Brian Boafo, Event Director</p>
+            <p className="text-sm font-semibold text-white">Mr. Brian Boafo, Event Director</p>
           </div>
         </div>
         <button
