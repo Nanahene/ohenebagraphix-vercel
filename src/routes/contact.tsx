@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { allServices } from 'content-collections'
-import { CheckCircle2, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { CheckCircle2, ChevronDown, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { SocialLinks } from '@/components/site/SocialLinks'
 import { siteConfig, whatsappLink } from '@/lib/site-config'
@@ -37,9 +37,27 @@ function Contact() {
     reference: '',
   })
 
+  const [serviceOpen, setServiceOpen] = useState(false)
+  const serviceRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (serviceRef.current && !serviceRef.current.contains(e.target as Node)) {
+        setServiceOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => setFields((f) => ({ ...f, [e.target.name]: e.target.value }))
+
+  const selectService = (s: string) => {
+    setFields((f) => ({ ...f, service: s }))
+    setServiceOpen(false)
+  }
 
   const selectedService = priceableServices.find((s) => s.title === fields.service)
   const priceLine = selectedService
@@ -151,19 +169,47 @@ function Contact() {
               </div>
 
               <Field label="Service needed" htmlFor="service">
-                <select
-                  id="service"
-                  name="service"
-                  value={fields.service}
-                  onChange={handleChange}
-                  className="field-input"
-                >
-                  {services.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
+                <div ref={serviceRef} className="relative">
+                  <button
+                    type="button"
+                    id="service"
+                    onClick={() => setServiceOpen((o) => !o)}
+                    aria-haspopup="listbox"
+                    aria-expanded={serviceOpen}
+                    className="field-input flex w-full items-center justify-between text-left"
+                  >
+                    <span>{fields.service}</span>
+                    <ChevronDown
+                      className="h-4 w-4 shrink-0 transition-transform duration-200"
+                      style={{ color: 'var(--ink-soft)', transform: serviceOpen ? 'rotate(180deg)' : 'none' }}
+                    />
+                  </button>
+                  {serviceOpen && (
+                    <ul
+                      role="listbox"
+                      aria-label="Service needed"
+                      className="absolute z-10 mt-1 max-h-64 w-full overflow-auto rounded-xl border py-1 shadow-lg"
+                      style={{ borderColor: 'var(--line)', backgroundColor: 'var(--paper)' }}
+                    >
+                      {services.map((s) => (
+                        <li key={s} role="option" aria-selected={fields.service === s}>
+                          <button
+                            type="button"
+                            onClick={() => selectService(s)}
+                            className="block w-full px-4 py-2 text-left text-sm"
+                            style={{
+                              color: fields.service === s ? 'var(--clay-dark)' : 'var(--ink)',
+                              fontWeight: fields.service === s ? 600 : 400,
+                              backgroundColor: fields.service === s ? 'var(--paper-warm)' : 'transparent',
+                            }}
+                          >
+                            {s}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
                 <p className="mt-1.5 text-sm font-medium" style={{ color: 'var(--clay-dark)' }}>
                   {priceLine}
                 </p>
@@ -311,4 +357,4 @@ function Field({
       {children}
     </div>
   )
-}
+  }
