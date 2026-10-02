@@ -160,9 +160,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           Skip to content
         </a>
 
+        <AmbientBackground />
         <div className="grain-overlay" />
-
-        <div className="flex min-h-screen flex-col">
+        <div className="relative z-10 flex min-h-screen flex-col">
           <Header />
 
           <main id="main-content" className="flex-1">
