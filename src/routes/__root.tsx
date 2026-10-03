@@ -4,7 +4,6 @@ import { Header } from '@/components/site/Header'
 import { Footer } from '@/components/site/Footer'
 import { WhatsAppFloat } from '@/components/site/WhatsAppFloat'
 import { siteConfig } from '@/lib/site-config'
-import { AmbientBackground } from '@/components/site/AmbientBackground'
 
 import '../styles.css'
 
@@ -160,9 +159,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           Skip to content
         </a>
 
-        <AmbientBackground />
         <div className="grain-overlay" />
-        <div className="relative z-10 flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col">
           <Header />
 
           <main id="main-content" className="flex-1">
