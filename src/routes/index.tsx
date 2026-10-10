@@ -15,7 +15,7 @@ export const Route = createFileRoute('/')({
       {
         name: 'description',
         content:
-          'Ohenebagraphix is a graphic design studio in Accra, Ghana led by Prince Adjei-Addo, delivering flyers, brand identity and print design for clients across Ghana and worldwide.',
+          'Ohenebagraphix is a graphic design studio in Accra, Ghana led by Prince Adjei-Addo, delivering flyers, brand designs and print designs for clients across Ghana and worldwide.',
       },
     ],
   }),
