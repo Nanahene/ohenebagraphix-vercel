@@ -32,6 +32,7 @@ export const siteConfig = {
     tiktok: 'https://tiktok.com/@ohenebagraphix',
     facebook: 'https://facebook.com/ohenebayaw20',
     pinterest: 'https://pinterest.com/ohenebagraphix',
+    youtube: 'https://youtube.com/@ohenebagraphix',
   },
   whatIYouGet: [
     {
@@ -117,4 +118,4 @@ export const siteConfig = {
 export function whatsappLink(message?: string) {
   const base = `https://wa.me/${siteConfig.whatsappNumber}`
   return message ? `${base}?text=${encodeURIComponent(message)}` : base
-}
+        }
