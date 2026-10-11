@@ -1,4 +1,4 @@
-import { Facebook, Instagram } from 'lucide-react'
+import { Facebook, Instagram, Youtube } from 'lucide-react'
 import { PinterestIcon, TikTokIcon } from '@/components/icons'
 import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
@@ -8,6 +8,7 @@ const links = [
   { href: siteConfig.social.tiktok, label: 'TikTok', Icon: TikTokIcon },
   { href: siteConfig.social.facebook, label: 'Facebook', Icon: Facebook },
   { href: siteConfig.social.pinterest, label: 'Pinterest', Icon: PinterestIcon },
+  { href: siteConfig.social.youtube, label: 'YouTube', Icon: Youtube },
 ]
 
 export function SocialLinks({ className, iconClassName }: { className?: string; iconClassName?: string }) {
