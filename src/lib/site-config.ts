@@ -30,7 +30,7 @@ export const siteConfig = {
   social: {
     instagram: 'https://instagram.com/ohenebagraphix',
     tiktok: 'https://tiktok.com/@ohenebagraphix',
-    facebook: 'https://facebook.com/ohenebayaw20',
+    facebook: 'https://facebook.com/ohenebagraphixgh',
     pinterest: 'https://pinterest.com/ohenebagraphix',
     youtube: 'https://youtube.com/@ohenebagraphix',
   },
