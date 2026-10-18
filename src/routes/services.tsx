@@ -11,7 +11,7 @@ export const Route = createFileRoute('/services')({
       {
         name: 'description',
         content:
-          'Flyer design, brand identity, business cards, letterheads, certificates and more from Ohenebagraphix, a graphic design studio in Accra, Ghana.',
+          'Flyer design, brand designs, business cards, letterheads, certificates and more from Ohenebagraphix, a graphic design studio in Accra, Ghana.',
       },
     ],
   }),
@@ -32,7 +32,7 @@ function Services() {
           Every design, built from scratch to fit your brand
         </h1>
         <p className="mt-4 text-base leading-relaxed" style={{ color: 'var(--ink-soft)' }}>
-          From a single flyer to a full brand identity system, every service comes with a 72-hour standard
+          From a single flyer to a full project, every service comes with a 72-hour standard
           turnaround and reasonable revisions included.
         </p>
       </Reveal>
