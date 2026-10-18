@@ -50,7 +50,7 @@ export const siteConfig = {
     },
     {
       title: 'Print + social ready',
-      description: 'Files exported for both press and screen.',
+      description: 'Files exported for both printing and social media.',
     },
   ],
   pricingTerms: [
@@ -78,7 +78,7 @@ export const siteConfig = {
   howItWorks: [
     {
       title: 'Send your brief',
-      description: 'Tell me what you need via the contact form or WhatsApp, photos or reference links welcome.',
+      description: 'Tell me what you need via the contact form or WhatsApp.',
     },
     {
       title: 'Get a quote',
