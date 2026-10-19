@@ -50,7 +50,7 @@ export const siteConfig = {
     },
     {
       title: 'Print + social ready',
-      description: 'Files exported for both printing and social media.',
+      description: 'Files exported for both print and social media use.',
     },
   ],
   pricingTerms: [
