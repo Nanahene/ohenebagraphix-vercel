@@ -90,7 +90,7 @@ export const siteConfig = {
     },
     {
       title: 'Receive final files',
-      description: 'Print- and social-ready files delivered once the balance is settled.',
+      description: 'Print and social media ready files delivered once the balance is settled.',
     },
   ],
   about: {
