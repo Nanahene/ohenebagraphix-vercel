@@ -33,6 +33,7 @@ export const siteConfig = {
     facebook: 'https://facebook.com/ohenebagraphixgh',
     pinterest: 'https://pinterest.com/ohenebagraphix',
     youtube: 'https://youtube.com/@ohenebagraphix',
+    linkedin: 'https://www.linkedin.com/in/prince-adjei-addo-24451132b',
   },
   whatIYouGet: [
     {
