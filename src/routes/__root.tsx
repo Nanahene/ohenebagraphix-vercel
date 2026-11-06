@@ -93,28 +93,62 @@ export const Route = createRootRoute({
         type: 'application/ld+json',
         children: JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'ProfessionalService',
-          name: 'Ohenebagraphix',
-          founder: {
-            '@type': 'Person',
-            name: 'Prince Adjei-Addo',
-          },
-          description: siteConfig.description,
-          url: siteConfig.url,
-          image: `${siteConfig.url}/images/brand/prince-adjei-addo.webp`,
-          email: siteConfig.email,
-          telephone: siteConfig.phoneDisplay,
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Dansoman, Accra',
-            addressCountry: 'GH',
-          },
-          areaServed: 'Worldwide',
-          sameAs: [
-            siteConfig.social.instagram,
-            siteConfig.social.tiktok,
-            siteConfig.social.facebook,
-            siteConfig.social.pinterest,
+          '@graph': [
+            {
+              '@type': 'ProfessionalService',
+              '@id': `${siteConfig.url}/#business`,
+              name: 'Ohenebagraphix',
+              founder: { '@id': `${siteConfig.url}/#prince` },
+              description: siteConfig.description,
+              url: siteConfig.url,
+              image: `${siteConfig.url}/images/brand/prince-adjei-addo.webp`,
+              email: siteConfig.email,
+              telephone: siteConfig.phoneDisplay,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Dansoman, Accra',
+                addressCountry: 'GH',
+              },
+              areaServed: 'Worldwide',
+              sameAs: [
+                siteConfig.social.instagram,
+                siteConfig.social.tiktok,
+                siteConfig.social.facebook,
+                siteConfig.social.pinterest,
+                siteConfig.social.youtube,
+              ],
+            },
+            {
+              '@type': 'Person',
+              '@id': `${siteConfig.url}/#prince`,
+              name: 'Prince Adjei-Addo',
+              jobTitle: 'Founder & Graphic Designer',
+              description:
+                'Prince Adjei-Addo is the founder and graphic designer of Ohenebagraphix, a design studio in Dansoman, Accra, Ghana, creating flyers, business cards, letterheads and print collateral for clients across Ghana and worldwide.',
+              url: `${siteConfig.url}/about`,
+              image: `${siteConfig.url}/images/brand/prince-adjei-addo.webp`,
+              worksFor: { '@id': `${siteConfig.url}/#business` },
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Dansoman, Accra',
+                addressCountry: 'GH',
+              },
+              knowsAbout: [
+                'Graphic Design',
+                'Flyer Design',
+                'Brand Design',
+                'Print Design',
+                'Business Card Design',
+                'Event Branding',
+              ],
+              award: "Youth Leader of the Year, TC Shine Awards (Gradference'24)",
+              sameAs: [
+                siteConfig.social.linkedin,
+                siteConfig.social.instagram,
+                siteConfig.social.tiktok,
+                siteConfig.social.youtube,
+              ],
+            },
           ],
         }),
       },
@@ -231,4 +265,3 @@ function NotFound() {
     </div>
   )
           }
-          
