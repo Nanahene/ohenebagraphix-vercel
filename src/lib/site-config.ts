@@ -100,7 +100,7 @@ export const siteConfig = {
       "I run Ohenebagraphix from Dansoman, Accra. What started as a curiosity turned into a practice. Two years, over a hundred happy clients, and one belief that hasn't changed: a great design should feel inevitable, like it was always meant to look this way.",
       'I design flyers, business cards, letterheads, citations, social media graphics and print collateral for churches, brands, creators and families, from a single flyer to a full event campaign.',
       "Every project is built from scratch around the client's story, with no recycled templates. Standard delivery is 72 hours, reasonable revisions are included, and files come ready for both print and social media.",
-      "So far that has meant 150+ projects for over 110 clients across Ghana and beyond, including the event branding and campaign design for GRADFERENCE'26 and the TC Shine Awards. I've also been recognized at the TC Shine Awards, named Youth Leader of the Year and nominated for Best Graphic Designer.",
+      "So far, this has resulted in over 150 projects for more than 110 clients across Ghana and beyond, including event branding and campaign design for GRADFERENCE'26 and the TC Shine Awards. I've also been recognized at the TC Shine Awards, named Youth Leader of the Year and nominated for Best Graphic Designer.",
       "Have a project in mind? Send me a message on WhatsApp or through the contact form and I'll reply with a quote, usually within a day.",
     ],
         awards: [
